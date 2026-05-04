@@ -80,6 +80,8 @@
     "filter_web": "Web",
     "filter_mobile": "Apps Móviles",
     "filter_backend": "Backend",
+    "filter_frontend": "Frontend",
+    "filter_fullstack": "Full Stack",
     "btn_live": "Demo en Vivo",
     "btn_code": "Código Fuente",
     "items": {
@@ -107,8 +109,13 @@
     },
     "messages": {
       "success": "¡Mensaje enviado con éxito!",
-      "error": "Error al enviar el mensaje. Por favor intenta de nuevo."
-    }
+      "error": "Error al enviar el mensaje. Por favor intenta de nuevo.",
+      "fill_fields": "Por favor completa todos los campos"
+    },
+    "form_title": "Enviar un Mensaje",
+    "form_footer": "Tu mensaje será enviado directamente a mi bandeja de entrada",
+    "direct_title": "Contacto Directo",
+    "social_title": "Conéctate en Línea"
   },
   "resume": {
     "title": "Mi",
@@ -174,7 +181,15 @@
     "academicBackground": "Formación Académica",
     "status": "Estatus",
     "cta_title": "¿Listo para colaborar?",
-    "cta_desc": "Descarga mi currículum completo para obtener información detallada sobre mi experiencia, proyectos y habilidades técnicas. ¡Construyamos algo increíble juntos!"
+    "cta_desc": "Descarga mi currículum completo para obtener información detallada sobre mi experiencia, proyectos y habilidades técnicas. ¡Construyamos algo increíble juntos!",
+    "badge": "Currículum Profesional",
+    "description": "Descarga mi currículum completo o léelo en línea para conocer más sobre mi experiencia profesional, habilidades y logros.",
+    "preview_title": "Vista Previa del CV",
+    "view_browser": "Ver en el Navegador",
+    "fail_load": "¡Error al cargar el PDF, pero aún puedes acceder a él!",
+    "no_problem": "¿No puedes ver el PDF? ¡No hay problema!",
+    "exp_badge": "Experiencia Laboral",
+    "exp_title": "Trayectoria Profesional"
   },
   "techStack": {
     "title": "Stack Tecnológico",
@@ -202,6 +217,15 @@
         "description": "Aplicaciones móviles nativas y multiplataforma para el equipo de ventas en campo.",
         "highlight": "Experiencia nativa con sincronización de datos offline"
       }
-    }
+    },
+    "description": "Una descripción completa de las tecnologías, frameworks y herramientas que utilizo para construir aplicaciones modernas y escalables. Desde el desarrollo backend hasta el despliegue en la nube.",
+    "action_title": "Stack Tecnológico en Acción",
+    "action_desc": "Proyectos reales que muestran cómo aplico estas tecnologías para resolver problemas",
+    "key_tech": "Tecnologías Clave:"
+  },
+  "footer": {
+    "made_with": "Hecho con",
+    "by": "por",
+    "rights": "Todos los derechos reservados."
   }
 }

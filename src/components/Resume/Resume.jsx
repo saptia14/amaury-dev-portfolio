@@ -51,7 +51,7 @@ function Resume() {
             >
               <FaFilePdf className="w-6 h-6 text-primary-400" />
               <span className="text-lg font-semibold text-neutral-300">
-                Professional Resume
+                {t('resume.badge')}
               </span>
             </motion.div>
 
@@ -77,8 +77,7 @@ function Resume() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              Download my complete resume or view it online to learn more about 
-              my professional experience, skills, and achievements.
+              {t('resume.description')}
             </motion.p>
 
           </div>
@@ -97,7 +96,7 @@ function Resume() {
                   <div className="flex justify-between items-center mb-6">
                     <div>
                       <h3 className="text-2xl font-bold text-neutral-100">
-                        Resume Preview
+                        {t('resume.preview_title')}
                       </h3>
                       <p className="text-neutral-400 text-sm mt-1">
                         {PERSONAL_INFO.resumePath.split('/').pop()}
@@ -125,7 +124,7 @@ function Resume() {
                     {/* Fallback for browsers that don't support PDF viewing */}
                     <div className={`text-center mt-4 p-4 bg-neutral-700/30 rounded-lg ${pdfError ? 'bg-red-900/20 border border-red-500/30' : ''}`}>
                       <p className="text-neutral-400 text-sm mb-3">
-                        {pdfError ? 'PDF failed to load, but you can still access it!' : "Can't see the PDF? No problem!"}
+                        {pdfError ? t('resume.fail_load') : t('resume.no_problem')}
                       </p>
                       <div className="flex gap-4 justify-center">
                         <a
@@ -135,7 +134,7 @@ function Resume() {
                           className="inline-flex items-center gap-2 bg-primary-500 hover:bg-primary-600 text-neutral-900 font-medium px-4 py-2 rounded-lg text-sm transition-colors duration-300"
                         >
                           <FaEye className="text-sm" />
-                          View in Browser
+                          {t('resume.view_browser')}
                         </a>
                         <button
                           onClick={handleDownloadPDF}
@@ -158,11 +157,11 @@ function Resume() {
               <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full glass-effect border border-neutral-700/50 mb-6">
                 <FaBriefcase className="w-5 h-5 text-primary-400" />
                 <span className="text-lg font-semibold text-neutral-300">
-                  Work Experience
+                  {t('resume.exp_badge')}
                 </span>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold gradient-text">
-                Professional Journey
+                {t('resume.exp_title')}
               </h2>
             </div>
 

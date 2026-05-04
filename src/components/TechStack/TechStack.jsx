@@ -150,8 +150,7 @@ function TechStack() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              A comprehensive overview of the technologies, frameworks, and tools I use to build 
-              modern, scalable applications. From backend development to cloud deployment.
+              {t('techStack.description')}
             </motion.p>
           </div>
 
@@ -228,7 +227,7 @@ function TechStack() {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                Tech Stack in Action
+                {t('techStack.action_title')}
               </motion.h2>
               <motion.p 
                 className="text-neutral-400 max-w-2xl mx-auto"
@@ -237,7 +236,7 @@ function TechStack() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 viewport={{ once: true }}
               >
-                Real projects showcasing how I apply these technologies to solve problems
+                {t('techStack.action_desc')}
               </motion.p>
             </div>
 
@@ -264,7 +263,7 @@ function TechStack() {
                   
                   <div className="mb-4">
                     <p className="text-primary-400 font-medium text-sm mb-2">
-                      Key Technologies:
+                      {t('techStack.key_tech')}
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {project.techUsed.map((tech, techIndex) => (

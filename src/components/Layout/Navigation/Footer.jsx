@@ -100,7 +100,7 @@ const Footer = () => {
           {/* Copyright & Info */}
           <div className="flex flex-col items-center gap-2 text-sm text-neutral-500">
             <span className="flex items-center gap-1.5">
-              Made with
+              {t('footer.made_with')}
               <motion.span
                 className="text-primary-500"
                 animate={{ scale: [1, 1.15, 1] }}
@@ -112,10 +112,10 @@ const Footer = () => {
               >
                 <FaHeart className="text-xs" />
               </motion.span>
-              by <span className="text-neutral-400">{PERSONAL_INFO.fullName}</span>
+              {t('footer.by')} <span className="text-neutral-400">{PERSONAL_INFO.fullName}</span>
             </span>
             <span className="text-neutral-600">
-              © {currentYear} All rights reserved.
+              © {currentYear} {t('footer.rights')}
             </span>
           </div>
         </motion.div>

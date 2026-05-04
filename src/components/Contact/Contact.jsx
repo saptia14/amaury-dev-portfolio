@@ -44,7 +44,7 @@ function Contact() {
     e.preventDefault();
 
     if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
-      showToast("error", "Please fill in all fields");
+      showToast("error", t('contact.messages.fill_fields') || "Please fill in all fields");
       return;
     }
 
@@ -142,7 +142,7 @@ function Contact() {
             >
               <div className="bg-neutral-900/60 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-neutral-800">
                 <h2 className="text-xl font-semibold text-neutral-100 mb-6">
-                  Send a Message
+                  {t('contact.form_title')}
                 </h2>
 
                 <form onSubmit={handleSubmit} className="space-y-5">
@@ -211,7 +211,7 @@ function Contact() {
                 </form>
 
                 <p className="text-neutral-500 text-xs text-center mt-4">
-                  Your message will be sent directly to my inbox
+                  {t('contact.form_footer')}
                 </p>
               </div>
             </motion.div>
@@ -226,7 +226,7 @@ function Contact() {
               {/* Direct Contact */}
               <div className="bg-neutral-900/60 backdrop-blur-sm rounded-2xl p-6 border border-neutral-800">
                 <h2 className="text-lg font-semibold text-neutral-100 mb-5">
-                  Direct Contact
+                  {t('contact.direct_title')}
                 </h2>
 
                 <div className="space-y-4">
@@ -257,7 +257,7 @@ function Contact() {
               {/* Social Links */}
               <div className="bg-neutral-900/60 backdrop-blur-sm rounded-2xl p-6 border border-neutral-800">
                 <h2 className="text-lg font-semibold text-neutral-100 mb-5">
-                  Connect Online
+                  {t('contact.social_title')}
                 </h2>
 
                 <div className="flex gap-3">

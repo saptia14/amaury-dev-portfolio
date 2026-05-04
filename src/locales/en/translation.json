@@ -80,6 +80,8 @@
     "filter_web": "Web Apps",
     "filter_mobile": "Mobile Apps",
     "filter_backend": "Backend",
+    "filter_frontend": "Frontend",
+    "filter_fullstack": "Full Stack",
     "btn_live": "Live Demo",
     "btn_code": "Source Code",
     "items": {
@@ -107,8 +109,13 @@
     },
     "messages": {
       "success": "Message sent successfully!",
-      "error": "Failed to send message. Please try again."
-    }
+      "error": "Failed to send message. Please try again.",
+      "fill_fields": "Please fill in all fields"
+    },
+    "form_title": "Send a Message",
+    "form_footer": "Your message will be sent directly to my inbox",
+    "direct_title": "Direct Contact",
+    "social_title": "Connect Online"
   },
   "resume": {
     "title": "My",
@@ -174,7 +181,15 @@
     "academicBackground": "Academic Background",
     "status": "Status",
     "cta_title": "Ready to collaborate?",
-    "cta_desc": "Download my full resume for detailed information about my experience, projects, and technical skills. Let's build something amazing together!"
+    "cta_desc": "Download my full resume for detailed information about my experience, projects, and technical skills. Let's build something amazing together!",
+    "badge": "Professional Resume",
+    "description": "Download my complete resume or view it online to learn more about my professional experience, skills, and achievements.",
+    "preview_title": "Resume Preview",
+    "view_browser": "View in Browser",
+    "fail_load": "PDF failed to load, but you can still access it!",
+    "no_problem": "Can't see the PDF? No problem!",
+    "exp_badge": "Work Experience",
+    "exp_title": "Professional Journey"
   },
   "techStack": {
     "title": "Technology Stack",
@@ -202,6 +217,15 @@
         "description": "Native and cross-platform mobile applications for the field sales team.",
         "highlight": "Native experience with offline data synchronization"
       }
-    }
+    },
+    "description": "A comprehensive overview of the technologies, frameworks, and tools I use to build modern, scalable applications. From backend development to cloud deployment.",
+    "action_title": "Tech Stack in Action",
+    "action_desc": "Real projects showcasing how I apply these technologies to solve problems",
+    "key_tech": "Key Technologies:"
+  },
+  "footer": {
+    "made_with": "Made with",
+    "by": "by",
+    "rights": "All rights reserved."
   }
 }

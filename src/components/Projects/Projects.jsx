@@ -75,19 +75,28 @@ function Projects() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            {categories.map((category) => (
-              <button
-                key={category.value}
-                onClick={() => handleFilterChange(category.value)}
-                className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                  filter === category.value
-                    ? 'bg-gradient-to-r from-primary-500 to-primary-600 text-neutral-900 shadow-lg shadow-primary-500/20'
-                    : 'bg-neutral-800/50 text-neutral-400 hover:text-white hover:bg-neutral-700/50 border border-neutral-700/50'
-                }`}
-              >
-                {t(`projects.filter_${category.value}`) || category.label}
-              </button>
-            ))}
+            {categories.map((category) => {
+              const translationKey = `projects.filter_${category.value}`;
+              const translatedLabel = t(translationKey);
+              // If translation is missing (returns key) or empty, fallback to category.label
+              const displayLabel = (translatedLabel && translatedLabel !== translationKey) 
+                ? translatedLabel 
+                : category.label;
+
+              return (
+                <button
+                  key={category.value}
+                  onClick={() => handleFilterChange(category.value)}
+                  className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                    filter === category.value
+                      ? 'bg-gradient-to-r from-primary-500 to-primary-600 text-neutral-900 shadow-lg shadow-primary-500/20'
+                      : 'bg-neutral-800/50 text-neutral-400 hover:text-white hover:bg-neutral-700/50 border border-neutral-700/50'
+                  }`}
+                >
+                  {displayLabel}
+                </button>
+              );
+            })}
           </motion.div>
 
           {/* Projects List */}
