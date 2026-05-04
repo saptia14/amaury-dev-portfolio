@@ -34,7 +34,7 @@ dist-ssr
 *.sw?
 
 .vercel
-package-lock.json
+
 node_modules/
 .env*
 .specify
