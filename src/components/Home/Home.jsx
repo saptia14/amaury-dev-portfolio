@@ -353,10 +353,10 @@ function Home() {
         {/* ══════════ STATS BAR ══════════ */}
         <div className="hero-element">
           <div className="flex flex-wrap justify-center gap-2 md:gap-0 md:divide-x divide-neutral-800 bg-neutral-900/50 border border-neutral-800/60 rounded-2xl backdrop-blur-sm py-2">
-            <StatCard value="15" label={t('home.stats.projects')} />
+            <StatCard value="12" label={t('home.stats.projects')} />
             <StatCard value="5" label={t('home.stats.mobile_apps')} />
             <StatCard value="12" label={t('home.stats.technologies')} />
-            <StatCard value="4" label={t('home.stats.years_exp')} />
+            <StatCard value="6" label={t('home.stats.years_exp')} />
           </div>
         </div>
 

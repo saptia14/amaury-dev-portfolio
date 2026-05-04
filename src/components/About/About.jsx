@@ -136,12 +136,12 @@ function About() {
             {/* Quick Stats */}
             <div className="flex flex-wrap gap-6 pt-2">
               <div className="text-center">
-                <div className="text-2xl font-bold text-primary-400">15+</div>
+                <div className="text-2xl font-bold text-primary-400">12+</div>
                 <div className="text-xs text-neutral-500">{t('about.stats.projects')}</div>
               </div>
               <div className="w-px h-12 bg-neutral-800"></div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-primary-400">4+</div>
+                <div className="text-2xl font-bold text-primary-400">6+</div>
                 <div className="text-xs text-neutral-500">{t('about.stats.exp')}</div>
               </div>
               <div className="w-px h-12 bg-neutral-800"></div>
