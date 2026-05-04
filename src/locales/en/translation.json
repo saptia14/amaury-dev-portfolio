@@ -1,0 +1,207 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "resume": "Resume",
+    "contact": "Contact"
+  },
+  "home": {
+    "status": "Open to Opportunities",
+    "greeting": "Hi there, I'm —",
+    "roles": [
+      "Tech Lead",
+      "Senior Full Stack Developer",
+      "Mobile Engineer",
+      "Cloud Expert (AWS)"
+    ],
+    "description_1": "Tech Lead and Senior Full Stack Developer with ",
+    "description_years": "years of experience",
+    "description_2": " designing and developing web and mobile applications with ",
+    "description_3": ". Passionate about creating robust cloud architectures and leading engineering teams.",
+    "btn_projects": "View Projects",
+    "btn_contact": "Contact Me",
+    "btn_resume": "Resume",
+    "terminal": {
+      "whoami": "whoami",
+      "role": "cat role.txt",
+      "focus": "cat focus.txt",
+      "status": "echo $STATUS",
+      "status_result": "Ready to build",
+      "latest_projects": "▸ latest projects",
+      "view_all": "View All →"
+    },
+    "stats": {
+      "projects": "Projects",
+      "mobile_apps": "Mobile Apps",
+      "technologies": "Technologies",
+      "years_exp": "Years Exp"
+    },
+    "tech_title": "Technologies I work with"
+  },
+  "about": {
+    "title": "About",
+    "subtitle": "Me",
+    "greeting": "Hi, I'm ",
+    "role": "Tech Lead & Senior Full Stack Developer",
+    "description_1": "I am a Tech Lead and Senior Full Stack Developer with 6 years of experience designing, developing, deploying, and maintaining web and mobile applications. I specialize in enterprise-level applications with a strong focus on ",
+    "description_2": " for web platforms, and ",
+    "description_3": " for cross-platform and native mobile solutions.",
+    "description_4": "I lead tech teams, manage robust infrastructures on AWS, and believe in the continuous improvement of engineering processes.",
+    "stats": {
+      "projects": "Projects",
+      "exp": "Years Exp",
+      "dedication": "Dedication"
+    },
+    "highlights": {
+      "dev": {
+        "title": "Full Stack Developer",
+        "desc": "Specialized in Ruby on Rails & JavaScript"
+      },
+      "mobile": {
+        "title": "Mobile Engineer",
+        "desc": "Building apps with Kotlin, Swift & KMP"
+      },
+      "edu": {
+        "title": "Cloud & Infrastructure",
+        "desc": "Architecture & deployments on AWS"
+      },
+      "location": {
+        "title": "Based in",
+        "desc": "Querétaro, Mexico (Open to relocate)"
+      }
+    }
+  },
+  "projects": {
+    "title": "Featured",
+    "subtitle": "Projects",
+    "filter_all": "All",
+    "filter_web": "Web Apps",
+    "filter_mobile": "Mobile Apps",
+    "filter_backend": "Backend",
+    "btn_live": "Live Demo",
+    "btn_code": "Source Code",
+    "items": {
+      "project_1_desc": "An e-commerce platform built with Ruby on Rails and React. Includes payment gateway integration and inventory management.",
+      "project_2_desc": "A native Android application written in Kotlin for task management with offline support.",
+      "project_3_desc": "An iOS application built in Swift for real-time fitness tracking and analytics."
+    }
+  },
+  "contact": {
+    "title": "Get in",
+    "subtitle": "Touch",
+    "description": "I'm currently open for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!",
+    "form": {
+      "name": "Your Name",
+      "email": "Your Email",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Send Message",
+      "sending": "Sending..."
+    },
+    "info": {
+      "location_title": "Location",
+      "email_title": "Email",
+      "social_title": "Social Profiles"
+    },
+    "messages": {
+      "success": "Message sent successfully!",
+      "error": "Failed to send message. Please try again."
+    }
+  },
+  "resume": {
+    "title": "My",
+    "subtitle": "Resume",
+    "download": "Download PDF",
+    "page": "Page",
+    "of": "of",
+    "experiences": [
+      {
+        "title": "Tech Lead / Senior Full Stack",
+        "company": "Koonol México",
+        "period": "April 2021 - April 2026",
+        "location": "Zapopan, Jal.",
+        "achievements": [
+          "Technical Leadership & Team Management: Supervision of developers, strategic planning, mentoring, and training.",
+          "Enterprise Solutions Development: Direction and maintenance of complex CRM systems for administration and sales.",
+          "Architecture & Cloud (AWS): Design, management, and deployment of robust cloud infrastructures for scalability.",
+          "Mobile & Web Development: Native and cross-platform applications with Ruby on Rails, JavaScript, Kotlin, and Swift (iOS).",
+          "Integrations & Deployments: Integration of payment gateways and third-party APIs, and software lifecycle management."
+        ]
+      },
+      {
+        "title": "Software Developer",
+        "company": "Gurúcomm",
+        "period": "July 2019 - April 2021",
+        "location": "Querétaro, Qro.",
+        "achievements": [
+          "Development, optimization, and maintenance of software applications using Ruby on Rails and JavaScript.",
+          "Collaboration in the full software development cycle and implementation of code best practices."
+        ]
+      },
+      {
+        "title": "Trainee Developer",
+        "company": "Gurúcomm",
+        "period": "August 2019 - November 2019",
+        "location": "Querétaro, Qro.",
+        "achievements": [
+          "Participation in the development of corporate web platforms as a developer in Ruby on Rails and Ember JS."
+        ]
+      },
+      {
+        "title": "Freelance Developer",
+        "company": "Independent",
+        "period": "2018",
+        "location": "Remote",
+        "achievements": [
+          "Development of scripts in C# and game logic design using the Unity engine.",
+          "Story writing and narrative structuring for interactive projects."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "B.S. in Computer Systems Engineering",
+        "institution": "Instituto Tecnológico de Querétaro (ITQ)",
+        "period": "August 2016 - January 2022",
+        "location": "Querétaro, Qro.",
+        "gpa": "Ongoing",
+        "details": "Software engineering student with solid foundations in algorithm design, data structures, and development methodologies."
+      }
+    ],
+    "educationTitle": "Education",
+    "academicBackground": "Academic Background",
+    "status": "Status",
+    "cta_title": "Ready to collaborate?",
+    "cta_desc": "Download my full resume for detailed information about my experience, projects, and technical skills. Let's build something amazing together!"
+  },
+  "techStack": {
+    "title": "Technology Stack",
+    "subtitle_1": "Technologies",
+    "subtitle_2": "& Tools",
+    "categories": {
+      "backend": "Backend & Full Stack",
+      "mobile": "Mobile Development",
+      "cloud": "Cloud & DevOps",
+      "game": "Game Dev (Hobby)"
+    },
+    "projects": {
+      "crm": {
+        "name": "Sales CRM",
+        "description": "Complex system for the administration and management of enterprise-level sales forces.",
+        "highlight": "High-availability scalable cloud architecture"
+      },
+      "ecommerce": {
+        "name": "E-Commerce Platform",
+        "description": "Electronic commerce platform with payment gateway integration and inventory management.",
+        "highlight": "Secure and seamless payment integration"
+      },
+      "mobile_apps": {
+        "name": "Sales Mobile Apps",
+        "description": "Native and cross-platform mobile applications for the field sales team.",
+        "highlight": "Native experience with offline data synchronization"
+      }
+    }
+  }
+}

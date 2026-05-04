@@ -1,0 +1,19 @@
+{
+  "name": "Amaury Dev Portfolio",
+  "short_name": "Amaury Portfolio",
+  "description": "Amaury Full Stack Developer Portfolio",
+  "theme_color": "#0f172a",
+  "background_color": "#1e293b",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ]
+}

@@ -1,0 +1,207 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre Mí",
+    "skills": "Habilidades",
+    "projects": "Proyectos",
+    "resume": "CV",
+    "contact": "Contacto"
+  },
+  "home": {
+    "status": "Abierto a Oportunidades",
+    "greeting": "Hola, soy —",
+    "roles": [
+      "Tech Lead",
+      "Desarrollador Full Stack Senior",
+      "Ingeniero Móvil",
+      "Experto en Cloud (AWS)"
+    ],
+    "description_1": "Tech Lead y Desarrollador Full Stack Senior con ",
+    "description_years": "años de experiencia",
+    "description_2": " diseñando y desarrollando aplicaciones web y móviles con ",
+    "description_3": ". Apasionado por crear arquitecturas en la nube robustas y liderar equipos tecnológicos.",
+    "btn_projects": "Ver Proyectos",
+    "btn_contact": "Contáctame",
+    "btn_resume": "Currículum",
+    "terminal": {
+      "whoami": "whoami",
+      "role": "cat rol.txt",
+      "focus": "cat enfoque.txt",
+      "status": "echo $STATUS",
+      "status_result": "Listo para construir",
+      "latest_projects": "▸ últimos proyectos",
+      "view_all": "Ver Todos →"
+    },
+    "stats": {
+      "projects": "Proyectos",
+      "mobile_apps": "Apps Móviles",
+      "technologies": "Tecnologías",
+      "years_exp": "Años Exp"
+    },
+    "tech_title": "Tecnologías con las que trabajo"
+  },
+  "about": {
+    "title": "Sobre",
+    "subtitle": "Mí",
+    "greeting": "Hola, soy ",
+    "role": "Tech Lead & Desarrollador Full Stack Senior",
+    "description_1": "Soy Tech Lead y Desarrollador Full Stack Senior con 6 años de experiencia en el diseño, desarrollo, despliegue y mantenimiento de aplicaciones web y móviles. Me especializo en aplicaciones de nivel empresarial con un fuerte enfoque en ",
+    "description_2": " para plataformas web, y ",
+    "description_3": " para soluciones móviles multiplataforma y nativas.",
+    "description_4": "Lidero equipos tecnológicos, gestiono infraestructuras robustas en AWS y creo en la mejora continua de los procesos de ingeniería.",
+    "stats": {
+      "projects": "Proyectos",
+      "exp": "Años Exp",
+      "dedication": "Dedicación"
+    },
+    "highlights": {
+      "dev": {
+        "title": "Desarrollador Full Stack",
+        "desc": "Especializado en Ruby on Rails y JavaScript"
+      },
+      "mobile": {
+        "title": "Ingeniero Móvil",
+        "desc": "Construyendo apps con Kotlin, Swift y KMP"
+      },
+      "edu": {
+        "title": "Cloud & Infraestructura",
+        "desc": "Arquitectura y despliegues en AWS"
+      },
+      "location": {
+        "title": "Ubicación",
+        "desc": "Querétaro, México (Dispuesto a reubicarse)"
+      }
+    }
+  },
+  "projects": {
+    "title": "Proyectos",
+    "subtitle": "Destacados",
+    "filter_all": "Todos",
+    "filter_web": "Web",
+    "filter_mobile": "Apps Móviles",
+    "filter_backend": "Backend",
+    "btn_live": "Demo en Vivo",
+    "btn_code": "Código Fuente",
+    "items": {
+      "project_1_desc": "Plataforma de comercio electrónico construida con Ruby on Rails y React. Incluye pasarela de pagos y gestión de inventario.",
+      "project_2_desc": "Aplicación nativa para Android escrita en Kotlin para gestión de tareas con soporte offline.",
+      "project_3_desc": "Aplicación iOS construida en Swift para seguimiento y análisis de actividad física en tiempo real."
+    }
+  },
+  "contact": {
+    "title": "Ponte en",
+    "subtitle": "Contacto",
+    "description": "Actualmente estoy abierto a nuevas oportunidades. Ya sea que tengas una pregunta o solo quieras saludar, ¡haré lo posible por responderte!",
+    "form": {
+      "name": "Tu Nombre",
+      "email": "Tu Correo",
+      "subject": "Asunto",
+      "message": "Mensaje",
+      "send": "Enviar Mensaje",
+      "sending": "Enviando..."
+    },
+    "info": {
+      "location_title": "Ubicación",
+      "email_title": "Correo Electrónico",
+      "social_title": "Redes Sociales"
+    },
+    "messages": {
+      "success": "¡Mensaje enviado con éxito!",
+      "error": "Error al enviar el mensaje. Por favor intenta de nuevo."
+    }
+  },
+  "resume": {
+    "title": "Mi",
+    "subtitle": "Currículum",
+    "download": "Descargar PDF",
+    "page": "Página",
+    "of": "de",
+    "experiences": [
+      {
+        "title": "Tech Lead / Full Stack Senior",
+        "company": "Koonol México",
+        "period": "Abril 2021 - Abril 2026",
+        "location": "Zapopan, Jal.",
+        "achievements": [
+          "Liderazgo Técnico y Gestión de Equipos: Supervisión de desarrolladores, planificación estratégica, mentoría y capacitación.",
+          "Desarrollo de Soluciones Empresariales: Dirección y mantenimiento de sistemas CRM complejos para la administración y ventas.",
+          "Arquitectura y Cloud (AWS): Diseño, gestión y despliegue de infraestructuras robustas en la nube para escalabilidad.",
+          "Desarrollo Móvil y Web: Aplicaciones nativas y multiplataforma con Ruby on Rails, JavaScript, Kotlin y Swift (iOS).",
+          "Integraciones y Despliegues: Integración de pasarelas de pago y APIs de terceros, y gestión del ciclo de vida del software."
+        ]
+      },
+      {
+        "title": "Desarrollador de Software",
+        "company": "Gurúcomm",
+        "period": "Julio 2019 - Abril 2021",
+        "location": "Querétaro, Qro.",
+        "achievements": [
+          "Desarrollo, optimización y mantenimiento de aplicaciones de software utilizando Ruby on Rails y JavaScript.",
+          "Colaboración en el ciclo completo de desarrollo de software e implementación de buenas prácticas de código."
+        ]
+      },
+      {
+        "title": "Trainee Developer",
+        "company": "Gurúcomm",
+        "period": "Agosto 2019 - Noviembre 2019",
+        "location": "Querétaro, Qro.",
+        "achievements": [
+          "Participación en el desarrollo de plataformas web corporativas como desarrollador en Ruby on Rails y Ember JS."
+        ]
+      },
+      {
+        "title": "Freelance Developer",
+        "company": "Independiente",
+        "period": "2018",
+        "location": "Remoto",
+        "achievements": [
+          "Desarrollo de scripts en C# y diseño de lógicas de juego utilizando el motor Unity.",
+          "Redacción de historias (Story Writer) y estructuración de narrativas para proyectos interactivos."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "Licenciatura en Sistemas Computacionales",
+        "institution": "Instituto Tecnológico de Querétaro (ITQ)",
+        "period": "Agosto 2016 - Enero 2022",
+        "location": "Querétaro, Qro.",
+        "gpa": "En curso",
+        "details": "Estudiante de ingeniería de software con fundamentos sólidos en diseño de algoritmos, estructuras de datos y metodologías de desarrollo."
+      }
+    ],
+    "educationTitle": "Educación",
+    "academicBackground": "Formación Académica",
+    "status": "Estatus",
+    "cta_title": "¿Listo para colaborar?",
+    "cta_desc": "Descarga mi currículum completo para obtener información detallada sobre mi experiencia, proyectos y habilidades técnicas. ¡Construyamos algo increíble juntos!"
+  },
+  "techStack": {
+    "title": "Stack Tecnológico",
+    "subtitle_1": "Tecnologías",
+    "subtitle_2": "& Herramientas",
+    "categories": {
+      "backend": "Backend & Full Stack",
+      "mobile": "Mobile Development",
+      "cloud": "Cloud & DevOps",
+      "game": "Game Dev (Hobby)"
+    },
+    "projects": {
+      "crm": {
+        "name": "CRM de Ventas",
+        "description": "Sistema complejo para la administración y gestión de fuerzas de ventas a nivel empresarial.",
+        "highlight": "Arquitectura escalable en la nube de alta disponibilidad"
+      },
+      "ecommerce": {
+        "name": "Plataforma E-Commerce",
+        "description": "Plataforma de comercio electrónico con integración de pasarelas de pago y gestión de inventario.",
+        "highlight": "Integración segura y fluida de pagos"
+      },
+      "mobile_apps": {
+        "name": "Apps Móviles de Ventas",
+        "description": "Aplicaciones móviles nativas y multiplataforma para el equipo de ventas en campo.",
+        "highlight": "Experiencia nativa con sincronización de datos offline"
+      }
+    }
+  }
+}

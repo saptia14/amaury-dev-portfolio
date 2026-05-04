@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "title": "E-Commerce Platform",
+    "descriptionKey": "project_1_desc",
+    "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80",
+    "tags": ["Ruby on Rails", "React", "PostgreSQL", "AWS", "Stripe"],
+    "category": "fullstack",
+    "githubUrl": "https://github.com/Amaury2312",
+    "demoUrl": "https://github.com/Amaury2312",
+    "period": "Jan 2025 - Present",
+    "role": "Fullstack Developer",
+    "teamSize": 1,
+    "featured": true
+  },
+  {
+    "id": 2,
+    "title": "Task Manager Android App",
+    "descriptionKey": "project_2_desc",
+    "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80",
+    "tags": ["Kotlin", "Android SDK", "Room Database", "Coroutines"],
+    "category": "mobile",
+    "githubUrl": "https://github.com/Amaury2312",
+    "demoUrl": "https://github.com/Amaury2312",
+    "period": "Oct 2024 - Dec 2024",
+    "role": "Mobile Engineer",
+    "teamSize": 1,
+    "featured": true
+  },
+  {
+    "id": 3,
+    "title": "Fitness Tracker iOS",
+    "descriptionKey": "project_3_desc",
+    "image": "https://images.unsplash.com/photo-1526506114642-54fc5f1150fb?auto=format&fit=crop&w=800&q=80",
+    "tags": ["Swift", "iOS", "HealthKit", "CoreData"],
+    "category": "mobile",
+    "githubUrl": "https://github.com/Amaury2312",
+    "demoUrl": "https://github.com/Amaury2312",
+    "period": "Jul 2024 - Sep 2024",
+    "role": "iOS Developer",
+    "teamSize": 2,
+    "featured": true
+  }
+]
