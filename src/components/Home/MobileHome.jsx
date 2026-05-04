@@ -47,10 +47,10 @@ const MobileHome = memo(() => {
           <div>
             <p className="text-neutral-500 text-sm font-medium mb-2">Hi there, I'm —</p>
             <h1 className="text-4xl font-black leading-tight">
-              <span className="text-neutral-50">Nguyen Tran</span>
+              <span className="text-neutral-50">Emmanuel Amaury Fuentes</span>
               <br />
               <span className="bg-gradient-to-r from-primary-300 via-primary-400 to-primary-600 bg-clip-text text-transparent">
-                Gia Si
+                Venegas
               </span>
             </h1>
           </div>
@@ -71,10 +71,9 @@ const MobileHome = memo(() => {
 
           {/* Description */}
           <p className="text-neutral-400 text-sm leading-relaxed max-w-md">
-            Final-year{" "}
+            Ingeniero en Sistemas Computacionales con experiencia en desarrollo de software, cloud computing, DevOps, bases de datos, desarrollo de software y .{" "}
             <span className="text-primary-400 font-semibold">Software Engineering</span>{" "}
-            student building scalable systems with{" "}
-            <span className="text-primary-400 font-semibold">Java, Spring Boot & React</span>.
+            <span className="text-primary-400 font-semibold"> Full Stack Developer</span>{" "}
           </p>
 
           {/* CTA */}

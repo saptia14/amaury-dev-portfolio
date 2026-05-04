@@ -23,7 +23,7 @@ const Preloader = memo(function Preloader() {
     { text: 'const', type: 'keyword' },
     { text: ' developer', type: 'variable' },
     { text: ' = ', type: 'operator' },
-    { text: '"Gia Si"', type: 'string' },
+    { text: '"PORTFOLIO"', type: 'string' },
     { text: ';', type: 'punctuation' },
   ];
 
@@ -59,9 +59,9 @@ const Preloader = memo(function Preloader() {
               <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
               <span className="ml-3 text-neutral-500 text-xs font-mono">portfolio.js</span>
             </div>
-            
+
             {/* Code content */}
-            <motion.div 
+            <motion.div
               className="font-mono text-left"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -71,18 +71,18 @@ const Preloader = memo(function Preloader() {
                 <span className="text-primary-400">const</span>
                 <span className="text-neutral-100"> developer</span>
                 <span className="text-neutral-500"> = </span>
-                <motion.span 
+                <motion.span
                   className="text-green-400"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.6 }}
                 >
-                  "Gia Si"
+                  "PORTFOLIO"
                 </motion.span>
                 <span className="text-neutral-500">;</span>
               </div>
-              
-              <motion.div 
+
+              <motion.div
                 className="flex items-center gap-1 text-lg md:text-xl mt-2"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}

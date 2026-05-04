@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { PERSONAL_INFO } from "../../data/constants";
-import { 
+import {
   FaCode,
   FaServer,
   FaGraduationCap,
@@ -12,17 +12,17 @@ import {
 function About() {
   const { t } = useTranslation();
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-  
+
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
+
     const handleResize = () => {
       clearTimeout(window.resizeTimeout);
       window.resizeTimeout = setTimeout(checkMobile, 100);
     };
-    
+
     window.addEventListener('resize', handleResize, { passive: true });
     return () => {
       window.removeEventListener('resize', handleResize);
@@ -72,7 +72,7 @@ function About() {
 
         {/* Main Content */}
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center mb-16">
-          
+
           {/* Left: Avatar */}
           <motion.div
             className="lg:col-span-2 flex justify-center"
@@ -86,17 +86,17 @@ function About() {
               <div className="w-56 h-56 md:w-64 md:h-64 rounded-2xl overflow-hidden border-2 border-neutral-800 bg-neutral-900">
                 <img
                   src="/avatar.jpg"
-                  alt="Nguyen Tran Gia Si"
+                  alt="Emmanuel Amaury Fuentes Venegas"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
               </div>
-              
+
               {/* Decorative Elements */}
               <div className="absolute -top-3 -right-3 w-6 h-6 rounded-full bg-primary-500"></div>
               <div className="absolute -bottom-3 -left-3 w-4 h-4 rounded-full bg-primary-400/60"></div>
               <div className="absolute top-1/2 -right-6 w-3 h-3 rounded-full bg-neutral-700"></div>
-              
+
               {/* Status Badge */}
               <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-neutral-900 border border-neutral-700 rounded-full flex items-center gap-2">
                 <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
@@ -119,7 +119,7 @@ function About() {
               </h3>
               <p className="text-primary-500/80 font-medium">{t('about.role')}</p>
             </div>
-            
+
             <div className="space-y-4 text-neutral-400 leading-relaxed">
               <p>
                 {t('about.description_1')}
