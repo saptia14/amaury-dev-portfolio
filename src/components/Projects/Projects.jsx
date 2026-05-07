@@ -181,7 +181,7 @@ function ProjectCard({ project, index }) {
             {/* Title & Role */}
             <div className="mb-4">
               <h3 className="text-xl md:text-2xl font-bold text-white mb-2 group-hover:text-primary-400 transition-colors duration-300">
-                {project.title}
+                {project.titleKey ? t(`projects.items.${project.titleKey}`) : project.title}
               </h3>
               <div className="flex flex-wrap items-center gap-4 text-sm text-neutral-400">
                 <span className="flex items-center gap-1.5">
@@ -224,15 +224,17 @@ function ProjectCard({ project, index }) {
 
             {/* Action Buttons */}
             <div className="flex items-center gap-3">
-              <a
-                href={project.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-neutral-800 hover:bg-neutral-700 text-neutral-300 hover:text-white border border-neutral-700/50 hover:border-neutral-600 text-sm font-medium transition-all duration-300"
-              >
-                <FaGithub className="w-4 h-4" />
-                <span>{t('projects.btn_code')}</span>
-              </a>
+              {project.githubUrl && (
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-neutral-800 hover:bg-neutral-700 text-neutral-300 hover:text-white border border-neutral-700/50 hover:border-neutral-600 text-sm font-medium transition-all duration-300"
+                >
+                  <FaGithub className="w-4 h-4" />
+                  <span>{t('projects.btn_code')}</span>
+                </a>
+              )}
               {project.demoUrl && project.demoUrl !== project.githubUrl && (
                 <a
                   href={project.demoUrl}

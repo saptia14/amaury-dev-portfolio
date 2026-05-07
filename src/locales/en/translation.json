@@ -85,9 +85,26 @@
     "btn_live": "Live Demo",
     "btn_code": "Source Code",
     "items": {
+      "project_1_title": "Multi-Tenant CRM Platform",
       "project_1_desc": "An e-commerce platform built with Ruby on Rails and React. Includes payment gateway integration and inventory management.",
+      "project_2_title": "API for Multi-Tenant CRM Platform",
       "project_2_desc": "A native Android application written in Kotlin for task management with offline support.",
-      "project_3_desc": "An iOS application built in Swift for real-time fitness tracking and analytics."
+      "project_3_title": "Videogame Discord Manager BOT",
+      "project_3_desc": "An iOS application built in Swift for real-time fitness tracking and analytics.",
+      "project_4_title": "White-Label Consumer Ecosystem",
+      "project_4_desc": "Comprehensive multi-tenant mobile ecosystem with integrated payment solutions (Stripe, Openpay, FEMSA). Managed the complete production release cycle for multiple branded tenants.",
+      "project_5_title": "Enterprise POS Platform",
+      "project_5_desc": "Robust Point of Sale (POS) solution for high-volume transactions. Integrated multiple financial technologies to provide a unified and secure payment experience.",
+      "project_6_title": "Next-Gen Multiplatform App (KMP)",
+      "project_6_desc": "Migration of the user ecosystem to Kotlin Multiplatform (KMP). Centralized business logic for iOS and Android, ensuring consistency and reducing maintenance overhead.",
+      "project_7_title": "Scalable Top-up Portal",
+      "project_7_desc": "Optimized white-label platform for mobile top-ups. Designed for maximum accessibility, allowing users to recharge without a dedicated app or data connection through carrier provisioning.",
+      "project_8_title": "Consumer Self-Service CRM",
+      "project_8_desc": "High-traffic white-label portal for end-users to manage accounts, monitor consumption, and handle payments. Engineered for high availability and seamless user experience.",
+      "project_9_title": "Enterprise Sales & POS Ecosystem",
+      "project_9_desc": "Multi-tenant administration system for sales force and POS management. Includes advanced segmentation, auditing, and deep integration with mobile carriers and diverse payment processors.",
+      "project_10_title": "White-Label E-Commerce Engine",
+      "project_10_desc": "Scalable e-commerce platform with iframe support and logistics automation (99minutos). Supports complex payment flows (Stripe, Toku) and integrated lead traceability."
     }
   },
   "contact": {

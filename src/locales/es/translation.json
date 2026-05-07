@@ -85,9 +85,26 @@
     "btn_live": "Demo en Vivo",
     "btn_code": "Código Fuente",
     "items": {
+      "project_1_title": "Plataforma CRM Multi-Inquilino",
       "project_1_desc": "Plataforma de comercio electrónico construida con Ruby on Rails y React. Incluye pasarela de pagos y gestión de inventario.",
+      "project_2_title": "API para Plataforma CRM Multi-Inquilino",
       "project_2_desc": "Aplicación nativa para Android escrita en Kotlin para gestión de tareas con soporte offline.",
-      "project_3_desc": "Aplicación iOS construida en Swift para seguimiento y análisis de actividad física en tiempo real."
+      "project_3_title": "BOT de Gestión de Discord para Videojuegos",
+      "project_3_desc": "Aplicación iOS construida en Swift para seguimiento y análisis de actividad física en tiempo real.",
+      "project_4_title": "Ecosistema de Apps White-Label",
+      "project_4_desc": "Ecosistema móvil integral multi-inquilino con soluciones de pago integradas (Stripe, Openpay, FEMSA). Gestión del ciclo completo de lanzamiento para múltiples marcas.",
+      "project_5_title": "Plataforma de Punto de Venta (POS) Empresarial",
+      "project_5_desc": "Solución robusta de Punto de Venta para transacciones de alto volumen. Integración de múltiples tecnologías financieras para una experiencia de pago segura y unificada.",
+      "project_6_title": "App Multiplataforma de Nueva Generación (KMP)",
+      "project_6_desc": "Migración del ecosistema de usuario a Kotlin Multiplatform (KMP). Centralización de la lógica de negocio para iOS y Android, asegurando consistencia y reduciendo costos de mantenimiento.",
+      "project_7_title": "Portal de Recargas Escalable",
+      "project_7_desc": "Plataforma de marca blanca optimizada para recargas móviles. Diseñada para máxima accesibilidad, permitiendo a los usuarios recargar sin necesidad de una app o datos móviles mediante aprovisionamiento.",
+      "project_8_title": "CRM de Autoservicio para el Consumidor",
+      "project_8_desc": "Portal de marca blanca de alto tráfico para que los usuarios finales gestionen sus cuentas, monitoreen consumo y realicen pagos. Diseñado para alta disponibilidad y una experiencia fluida.",
+      "project_9_title": "Ecosistema de Ventas y POS Empresarial",
+      "project_9_desc": "Sistema de administración multi-inquilino para la gestión de fuerza de ventas y puntos de venta. Incluye segmentación avanzada, auditoría e integración profunda con operadores y procesadores de pago.",
+      "project_10_title": "Motor de E-Commerce Marca Blanca",
+      "project_10_desc": "Plataforma de comercio electrónico escalable con soporte para iframes y automatización logística (99minutos). Soporta flujos de pago complejos (Stripe, Toku) y trazabilidad integrada de leads."
     }
   },
   "contact": {

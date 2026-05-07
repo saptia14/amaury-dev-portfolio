@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+    "titleKey": "project_1_title",
     "title": "Multi Tenant CRM Platform",
     "descriptionKey": "project_1_desc",
     "image": "https://i.imgur.com/F7zOrqd.png",
@@ -22,6 +23,7 @@
   },
   {
     "id": 2,
+    "titleKey": "project_2_title",
     "title": "API for Multi Tenant CRM Platform",
     "descriptionKey": "project_2_desc",
     "image": "https://www.driftingruby.com/episodes/rails-7-api-application/download_image.png",
@@ -42,6 +44,7 @@
   },
   {
     "id": 3,
+    "titleKey": "project_3_title",
     "title": "Videogame Discord Manager BOT",
     "descriptionKey": "project_3_desc",
     "image": "https://i.imgur.com/0FmezAy.png",
@@ -58,6 +61,150 @@
     "period": "May 2026 - Present",
     "role": "Fullstack Developer",
     "teamSize": 1,
+    "featured": true
+  },
+  {
+    "id": 4,
+    "titleKey": "project_4_title",
+    "title": "White-Label Consumer Ecosystem",
+    "descriptionKey": "project_4_desc",
+    "image": "/projects/user-app.png",
+    "tags": [
+      "Swift",
+      "Kotlin",
+      "Stripe",
+      "Openpay",
+      "FEMSA",
+      "Production Release"
+    ],
+    "category": "mobile",
+    "githubUrl": "",
+    "demoUrl": "",
+    "period": "2021 - 2026",
+    "role": "Lead Mobile Engineer",
+    "teamSize": 5,
+    "featured": true
+  },
+  {
+    "id": 5,
+    "titleKey": "project_5_title",
+    "title": "Enterprise POS Platform",
+    "descriptionKey": "project_5_desc",
+    "image": "/projects/pos-app.png",
+    "tags": [
+      "Kotlin",
+      "Android SDK",
+      "Stripe",
+      "Openpay",
+      "Fintech"
+    ],
+    "category": "mobile",
+    "githubUrl": "",
+    "demoUrl": "",
+    "period": "2021 - 2026",
+    "role": "Senior Mobile Developer",
+    "teamSize": 4,
+    "featured": true
+  },
+  {
+    "id": 6,
+    "titleKey": "project_6_title",
+    "title": "Next-Gen Multiplatform App (KMP)",
+    "descriptionKey": "project_6_desc",
+    "image": "/projects/kmp-app.png",
+    "tags": [
+      "KMP",
+      "Kotlin Multiplatform",
+      "Swift",
+      "Clean Architecture",
+      "Mobile Strategy"
+    ],
+    "category": "mobile",
+    "githubUrl": "",
+    "demoUrl": "",
+    "period": "2024 - 2026",
+    "role": "Tech Lead / Mobile Architect",
+    "teamSize": 3,
+    "featured": true
+  },
+  {
+    "id": 7,
+    "titleKey": "project_7_title",
+    "title": "Scalable Top-up Portal",
+    "descriptionKey": "project_7_desc",
+    "image": "/projects/topup.png",
+    "tags": [
+      "React",
+      "High Availability",
+      "White-Label",
+      "Telco Integration"
+    ],
+    "category": "fullstack",
+    "githubUrl": "",
+    "demoUrl": "http://stage-recarga.koonolmexico.com/koonol",
+    "period": "2021 - 2026",
+    "role": "Full Stack Developer",
+    "teamSize": 3,
+    "featured": false
+  },
+  {
+    "id": 8,
+    "titleKey": "project_8_title",
+    "title": "Consumer Self-Service CRM",
+    "descriptionKey": "project_8_desc",
+    "image": "/projects/consumer-crm.png",
+    "tags": [
+      "Ruby on Rails",
+      "React",
+      "Scalability",
+      "B2C"
+    ],
+    "category": "fullstack",
+    "githubUrl": "",
+    "demoUrl": "",
+    "period": "2021 - 2026",
+    "role": "Lead Developer",
+    "teamSize": 4,
+    "featured": true
+  },
+  {
+    "id": 9,
+    "titleKey": "project_9_title",
+    "title": "Enterprise Sales & POS Ecosystem",
+    "descriptionKey": "project_9_desc",
+    "image": "/projects/sales-admin.png",
+    "tags": [
+      "Multi-tenant",
+      "Fintech",
+      "Carrier Integration",
+      "Audit System"
+    ],
+    "category": "fullstack",
+    "githubUrl": "",
+    "demoUrl": "",
+    "period": "2021 - 2026",
+    "role": "Tech Lead",
+    "teamSize": 6,
+    "featured": true
+  },
+  {
+    "id": 10,
+    "titleKey": "project_10_title",
+    "title": "White-Label E-Commerce Engine",
+    "descriptionKey": "project_10_desc",
+    "image": "/projects/ecommerce.png",
+    "tags": [
+      "E-commerce",
+      "Iframe Integration",
+      "99minutos",
+      "Payment Gateways"
+    ],
+    "category": "fullstack",
+    "githubUrl": "",
+    "demoUrl": "",
+    "period": "2021 - 2026",
+    "role": "Full Stack Architect",
+    "teamSize": 5,
     "featured": true
   }
 ]

@@ -59,10 +59,10 @@ const MobileHome = memo(() => {
           <div className="text-lg text-neutral-300 font-semibold min-h-[1.75rem]">
             <TypeWriter
               texts={[
-                "Java Backend Developer",
-                "Spring Boot Specialist",
-                "Full Stack Engineer",
-                "Team Leader",
+                "Software Engineer",
+                "Full Stack Developer",
+                "Cloud & DevOps",
+                "Ruby on Rails Developer",
               ]}
               delay={100}
               deleteDelay={50}

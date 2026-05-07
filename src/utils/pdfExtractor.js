@@ -17,7 +17,7 @@ const EXTRACTION_CONFIG = {
     projects: /(?:projects|portfolio|work\s+samples)/i,
     certifications: /(?:certifications?|certificates?|credentials?)/i
   },
-  
+
   // Patterns to extract specific data
   DATA_PATTERNS: {
     email: /([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g,
@@ -35,7 +35,7 @@ export const extractTextFromPDF = async (pdfFile) => {
   try {
     const pdf = await pdfjs.getDocument(pdfFile).promise
     const textContent = []
-    
+
     for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
       const page = await pdf.getPage(pageNum)
       const textData = await page.getTextContent()
@@ -45,7 +45,7 @@ export const extractTextFromPDF = async (pdfFile) => {
         text: pageText
       })
     }
-    
+
     return textContent
   } catch (error) {
     console.error('Error extracting text from PDF:', error)
@@ -58,7 +58,7 @@ export const extractTextFromPDF = async (pdfFile) => {
  */
 export const parseResumeData = (textContent) => {
   const fullText = textContent.map(page => page.text).join('\n')
-  
+
   // Extract basic information
   const personalInfo = extractPersonalInfo(fullText)
   const sections = identifySections(fullText)
@@ -67,7 +67,7 @@ export const parseResumeData = (textContent) => {
   const skills = extractSkills(sections.skills || '')
   const projects = extractProjects(sections.projects || '')
   const certifications = extractCertifications(sections.certifications || '')
-  
+
   return {
     personalInfo,
     experience,
@@ -110,14 +110,14 @@ const extractLocation = (text) => {
     /([A-Z][a-z\s]+,\s*[A-Z][a-z\s]+)/g, // City, State/Country
     /([A-Z][a-z\s]+,\s*[A-Z]{2,3})/g     // City, State Abbreviation
   ]
-  
+
   for (const pattern of locationPatterns) {
     const match = text.match(pattern)
     if (match) {
       return match[0]
     }
   }
-  
+
   return 'Location not specified'
 }
 
@@ -128,10 +128,10 @@ const identifySections = (text) => {
   const sections = {}
   const lines = text.split('\n')
   let currentSection = 'general'
-  
+
   lines.forEach(line => {
     const lineText = line.trim().toLowerCase()
-    
+
     // Check if this line is a section header
     Object.entries(EXTRACTION_CONFIG.SECTION_PATTERNS).forEach(([sectionName, pattern]) => {
       if (pattern.test(lineText)) {
@@ -140,19 +140,19 @@ const identifySections = (text) => {
         return
       }
     })
-    
+
     // Add content to current section
     if (line.trim().length > 0) {
       sections[currentSection] = sections[currentSection] || []
       sections[currentSection].push(line.trim())
     }
   })
-  
+
   // Convert arrays to strings
   Object.keys(sections).forEach(key => {
     sections[key] = sections[key].join('\n')
   })
-  
+
   return sections
 }
 
@@ -161,21 +161,21 @@ const identifySections = (text) => {
  */
 const extractExperience = (experienceText) => {
   if (!experienceText) return []
-  
+
   const experiences = []
   const entries = experienceText.split(/\n\s*\n/) // Split by blank lines
-  
+
   entries.forEach((entry, index) => {
     const lines = entry.split('\n').filter(line => line.trim())
     if (lines.length < 2) return
-    
+
     const title = lines[0] || `Position ${index + 1}`
     const company = lines[1] || 'Company not specified'
     const dates = extractDatesFromText(entry)
-    const responsibilities = lines.slice(2).filter(line => 
+    const responsibilities = lines.slice(2).filter(line =>
       !EXTRACTION_CONFIG.DATA_PATTERNS.dates.test(line)
     )
-    
+
     experiences.push({
       id: index + 1,
       title: cleanText(title),
@@ -186,7 +186,7 @@ const extractExperience = (experienceText) => {
       technologies: [] // Could be extracted with more sophisticated parsing
     })
   })
-  
+
   return experiences
 }
 
@@ -195,14 +195,14 @@ const extractExperience = (experienceText) => {
  */
 const extractEducation = (educationText) => {
   if (!educationText) return []
-  
+
   const education = []
   const entries = educationText.split(/\n\s*\n/)
-  
+
   entries.forEach((entry, index) => {
     const lines = entry.split('\n').filter(line => line.trim())
     if (lines.length < 2) return
-    
+
     education.push({
       id: index + 1,
       degree: cleanText(lines[0]),
@@ -212,7 +212,7 @@ const extractEducation = (educationText) => {
       achievements: lines.slice(2).map(line => cleanText(line))
     })
   })
-  
+
   return education
 }
 
@@ -221,14 +221,14 @@ const extractEducation = (educationText) => {
  */
 const extractSkills = (skillsText) => {
   if (!skillsText) return { technical: [], soft: [] }
-  
+
   // This is a simplified skill extraction
   // In practice, you'd want more sophisticated parsing
   const lines = skillsText.split('\n').filter(line => line.trim())
-  
+
   const technical = []
   const soft = []
-  
+
   lines.forEach(line => {
     const cleanLine = cleanText(line)
     if (cleanLine.length > 3) {
@@ -244,7 +244,7 @@ const extractSkills = (skillsText) => {
       }
     }
   })
-  
+
   return { technical, soft }
 }
 
@@ -253,14 +253,14 @@ const extractSkills = (skillsText) => {
  */
 const extractProjects = (projectsText) => {
   if (!projectsText) return []
-  
+
   const projects = []
   const entries = projectsText.split(/\n\s*\n/)
-  
+
   entries.forEach((entry, index) => {
     const lines = entry.split('\n').filter(line => line.trim())
     if (lines.length < 2) return
-    
+
     projects.push({
       id: index + 1,
       name: cleanText(lines[0]),
@@ -270,7 +270,7 @@ const extractProjects = (projectsText) => {
       highlights: lines.slice(2).map(line => cleanText(line))
     })
   })
-  
+
   return projects
 }
 
@@ -279,14 +279,14 @@ const extractProjects = (projectsText) => {
  */
 const extractCertifications = (certificationsText) => {
   if (!certificationsText) return []
-  
+
   const certifications = []
   const entries = certificationsText.split(/\n\s*\n/)
-  
+
   entries.forEach((entry, index) => {
     const lines = entry.split('\n').filter(line => line.trim())
     if (lines.length < 1) return
-    
+
     certifications.push({
       id: index + 1,
       name: cleanText(lines[0]),
@@ -295,7 +295,7 @@ const extractCertifications = (certificationsText) => {
       credentialId: extractCredentialId(entry) || 'N/A'
     })
   })
-  
+
   return certifications
 }
 
@@ -326,20 +326,19 @@ const extractCredentialId = (text) => {
 const extractTechnologies = (text) => {
   // Simple tech extraction - could be much more sophisticated
   const techKeywords = [
-    'java', 'javascript', 'python', 'react', 'angular', 'vue', 'node',
-    'spring', 'express', 'django', 'flask', 'mongodb', 'postgresql',
+    'javascript', 'kotlin', 'swift', 'ruby on rails', 'react', 'node', 'express', 'postgresql',
     'mysql', 'redis', 'docker', 'kubernetes', 'aws', 'azure', 'gcp'
   ]
-  
+
   const technologies = []
   const lowerText = text.toLowerCase()
-  
+
   techKeywords.forEach(tech => {
     if (lowerText.includes(tech)) {
       technologies.push(tech.charAt(0).toUpperCase() + tech.slice(1))
     }
   })
-  
+
   return [...new Set(technologies)] // Remove duplicates
 }
 
@@ -354,14 +353,14 @@ export const extractResumeFromPDF = async (pdfFile) => {
   try {
     console.log('Starting PDF extraction...')
     const textContent = await extractTextFromPDF(pdfFile)
-    
+
     if (textContent.length === 0) {
       throw new Error('No text content extracted from PDF')
     }
-    
+
     console.log('Parsing extracted text...')
     const resumeData = parseResumeData(textContent)
-    
+
     console.log('PDF extraction completed successfully')
     return {
       success: true,

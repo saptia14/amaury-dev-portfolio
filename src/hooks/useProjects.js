@@ -10,12 +10,24 @@ export const useProjects = (filter = 'all') => {
   const [loading] = useState(false);
   const [error] = useState(null);
 
-  // Filter projects based on category with memoization
+  // Filter and sort projects based on category with memoization
   const filteredProjects = useMemo(() => {
     if (!Array.isArray(projects)) return [];
-    return filter === 'all' 
+    
+    // First filter
+    const filtered = filter === 'all' 
       ? projects 
       : projects.filter(project => project && project.category === filter);
+      
+    // Then sort: projects with demoUrl come first
+    return [...filtered].sort((a, b) => {
+      const aHasDemo = !!a.demoUrl;
+      const bHasDemo = !!b.demoUrl;
+      
+      if (aHasDemo && !bHasDemo) return -1;
+      if (!aHasDemo && bHasDemo) return 1;
+      return 0;
+    });
   }, [projects, filter]);
 
   return {
@@ -50,7 +62,8 @@ export const getProjectCategories = (projects) => {
   const categoryLabels = {
     fullstack: 'Full Stack',
     frontend: 'Frontend',
-    backend: 'Backend'
+    backend: 'Backend',
+    mobile: 'Mobile Apps'
   };
 
   Object.entries(categoriesMap).forEach(([category, count]) => {

@@ -5,23 +5,61 @@ const HexagonGrid = () => {
 
   useEffect(() => {
     let animationFrameId;
+    let lastInteractionTime = Date.now();
+    let isIdle = true;
     
-    const handleMouseMove = (e) => {
+    const updateCoords = (x, y) => {
       if (!containerRef.current) return;
+      containerRef.current.style.setProperty('--mouse-x', `${x}px`);
+      containerRef.current.style.setProperty('--mouse-y', `${y}px`);
+      lastInteractionTime = Date.now();
+      isIdle = false;
+    };
+
+    const handleMouseMove = (e) => {
+      updateCoords(e.clientX, e.clientY);
+    };
+
+    const handleTouchMove = (e) => {
+      if (e.touches.length > 0) {
+        updateCoords(e.touches[0].clientX, e.touches[0].clientY);
+      }
+    };
+
+    // Idle animation loop
+    const animateIdle = () => {
+      const now = Date.now();
+      if (now - lastInteractionTime > 2000) {
+        isIdle = true;
+      }
+
+      if (isIdle && containerRef.current) {
+        const time = now / 2000;
+        const centerX = window.innerWidth / 2;
+        const centerY = window.innerHeight / 2;
+        const radius = Math.min(window.innerWidth, window.innerHeight) * 0.2;
+        
+        // Movimiento suave en forma de infinito (Lissajous curve)
+        const x = centerX + Math.sin(time) * radius * 1.5;
+        const y = centerY + Math.sin(time * 0.5) * radius;
+        
+        containerRef.current.style.setProperty('--mouse-x', `${x}px`);
+        containerRef.current.style.setProperty('--mouse-y', `${y}px`);
+      }
       
-      // Usar requestAnimationFrame para un rendimiento súper suave a 60fps
-      cancelAnimationFrame(animationFrameId);
-      animationFrameId = requestAnimationFrame(() => {
-        if (containerRef.current) {
-          containerRef.current.style.setProperty('--mouse-x', `${e.clientX}px`);
-          containerRef.current.style.setProperty('--mouse-y', `${e.clientY}px`);
-        }
-      });
+      animationFrameId = requestAnimationFrame(animateIdle);
     };
 
     window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('touchstart', handleTouchMove);
+    window.addEventListener('touchmove', handleTouchMove);
+    
+    animateIdle();
+
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('touchstart', handleTouchMove);
+      window.removeEventListener('touchmove', handleTouchMove);
       cancelAnimationFrame(animationFrameId);
     };
   }, []);
