@@ -104,7 +104,9 @@
       "project_9_title": "Enterprise Sales & POS Ecosystem",
       "project_9_desc": "Multi-tenant administration system for sales force and POS management. Includes advanced segmentation, auditing, and deep integration with mobile carriers and diverse payment processors.",
       "project_10_title": "White-Label E-Commerce Engine",
-      "project_10_desc": "Scalable e-commerce platform with iframe support and logistics automation (99minutos). Supports complex payment flows (Stripe, Toku) and integrated lead traceability."
+      "project_10_desc": "Scalable e-commerce platform with iframe support and logistics automation (99minutos). Supports complex payment flows (Stripe, Toku) and integrated lead traceability.",
+      "project_11_title": "Professional Dev Portfolio",
+      "project_11_desc": "High-performance professional portfolio featuring advanced SVG/3D backgrounds, custom animation systems, and full i18n support. Designed for a premium responsive experience."
     }
   },
   "contact": {

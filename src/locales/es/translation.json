@@ -104,7 +104,9 @@
       "project_9_title": "Ecosistema de Ventas y POS Empresarial",
       "project_9_desc": "Sistema de administración multi-inquilino para la gestión de fuerza de ventas y puntos de venta. Incluye segmentación avanzada, auditoría e integración profunda con operadores y procesadores de pago.",
       "project_10_title": "Motor de E-Commerce Marca Blanca",
-      "project_10_desc": "Plataforma de comercio electrónico escalable con soporte para iframes y automatización logística (99minutos). Soporta flujos de pago complejos (Stripe, Toku) y trazabilidad integrada de leads."
+      "project_10_desc": "Plataforma de comercio electrónico escalable con soporte para iframes y automatización logística (99minutos). Soporta flujos de pago complejos (Stripe, Toku) y trazabilidad integrada de leads.",
+      "project_11_title": "Portafolio Profesional Dev",
+      "project_11_desc": "Portafolio profesional de alto rendimiento con fondos avanzados SVG/3D, sistemas de animación personalizados y soporte completo i18n. Diseñado para una experiencia premium y responsiva."
     }
   },
   "contact": {

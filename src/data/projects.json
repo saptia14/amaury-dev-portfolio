@@ -206,5 +206,20 @@
     "role": "Full Stack Architect",
     "teamSize": 5,
     "featured": true
+  },
+  {
+    "id": 11,
+    "titleKey": "project_11_title",
+    "title": "Professional Dev Portfolio",
+    "descriptionKey": "project_11_desc",
+    "image": "/projects/portfolio-scroll.webp",
+    "tags": ["React 19", "Vite", "Tailwind CSS", "Framer Motion", "i18next", "SVG Animations"],
+    "category": "frontend",
+    "githubUrl": "https://github.com/saptia14/amaury-dev-portfolio",
+    "demoUrl": "https://soyamaury.dev/",
+    "period": "May 2026",
+    "role": "Creator & Architect",
+    "teamSize": 1,
+    "featured": true
   }
 ]

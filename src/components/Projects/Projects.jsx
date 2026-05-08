@@ -159,13 +159,25 @@ function ProjectCard({ project, index }) {
           <div className="md:w-72 lg:w-80 flex-shrink-0">
             <div className="relative h-48 md:h-full overflow-hidden bg-neutral-800/50">
               {!imageError ? (
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  onError={() => setImageError(true)}
-                  loading="lazy"
-                />
+                project.image.match(/\.(mp4|webm)$/i) && !project.image.includes('imgur') ? (
+                  <video
+                    src={project.image}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    onError={() => setImageError(true)}
+                  />
+                ) : (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    onError={() => setImageError(true)}
+                    loading="lazy"
+                  />
+                )
               ) : (
                 <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-neutral-800 to-neutral-900">
                   <span className="text-4xl font-bold text-neutral-600">{project.title.charAt(0)}</span>
