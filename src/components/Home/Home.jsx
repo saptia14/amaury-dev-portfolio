@@ -14,8 +14,8 @@ import {
   SiReact,
   SiKotlin,
   SiSwift,
-  SiVite,
-  SiCloudflare,
+  SiPostgresql,
+  SiEmberdotjs,
   SiDocker
 } from "react-icons/si";
 import { FaAws } from "react-icons/fa";
@@ -61,13 +61,13 @@ function StatCard({ value, label, suffix = "+" }) {
 function TechMarquee() {
   const techs = [
     { icon: SiRubyonrails, name: "Ruby on Rails", color: "text-red-500" },
+    { icon: SiPostgresql, name: "PostgreSQL", color: "text-sky-400" },
     { icon: SiKotlin, name: "Kotlin", color: "text-purple-500" },
     { icon: SiSwift, name: "Swift", color: "text-orange-500" },
+    { icon: SiEmberdotjs, name: "Ember.js", color: "text-red-400" },
     { icon: SiReact, name: "React", color: "text-cyan-400" },
-    { icon: SiVite, name: "Vite", color: "text-purple-400" },
     { icon: FaAws, name: "AWS", color: "text-primary-500" },
-    { icon: SiCloudflare, name: "Cloudflare", color: "text-orange-400" },
-    { icon: SiDocker, name: "DevOps", color: "text-blue-400" },
+    { icon: SiDocker, name: "Docker", color: "text-blue-400" },
   ];
 
   // Duplicate for seamless loop
@@ -317,7 +317,7 @@ function Home() {
                     <span className="text-primary-500">$</span>{" "}
                     <span className="text-neutral-400">{t('home.terminal.focus')}</span>
                     <p className="text-primary-300 mt-1 pl-4">
-                      Ruby On Rails · Kotlin · React
+                      Ruby on Rails · KMP · AWS
                     </p>
                   </div>
                   <div>
@@ -353,9 +353,9 @@ function Home() {
         {/* ══════════ STATS BAR ══════════ */}
         <div className="hero-element">
           <div className="flex flex-wrap justify-center gap-2 md:gap-0 md:divide-x divide-neutral-800 bg-neutral-900/50 border border-neutral-800/60 rounded-2xl backdrop-blur-sm py-2">
-            <StatCard value="12" label={t('home.stats.projects')} />
-            <StatCard value="5" label={t('home.stats.mobile_apps')} />
-            <StatCard value="12" label={t('home.stats.technologies')} />
+            <StatCard value="8" label={t('home.stats.projects')} />
+            <StatCard value="17" label={t('home.stats.mobile_apps')} />
+            <StatCard value="20" label={t('home.stats.technologies')} />
             <StatCard value="6" label={t('home.stats.years_exp')} />
           </div>
         </div>

@@ -3,23 +3,26 @@ import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import SEOHead from '../SEO/SEOHead'
 import { SEO_CONFIGS } from '../SEO/seoConfigs'
-import { 
-  SiReact, 
-  SiTailwindcss, 
-  SiDocker, 
-  SiGit,
-  SiPostman,
-  SiFramer,
-  SiVercel,
-  SiGithub,
+import {
+  SiDocker,
   SiJavascript,
   SiRubyonrails,
   SiKotlin,
   SiSwift,
-  SiApple,
-  SiUnity
+  SiPostgresql,
+  SiRedis,
+  SiEmberdotjs,
+  SiTypescript,
+  SiNodedotjs,
+  SiSass,
+  SiGitlab,
+  SiVault,
+  SiFastlane,
+  SiJetpackcompose,
+  SiOpentelemetry,
+  SiAndroid
 } from 'react-icons/si'
-import { FaDatabase, FaTools, FaCloud, FaRocket, FaCode, FaMobileAlt, FaGamepad, FaAws } from 'react-icons/fa'
+import { FaDatabase, FaTools, FaCloud, FaRocket, FaCode, FaMobileAlt, FaAws, FaServer, FaNetworkWired, FaShieldAlt, FaLayerGroup, FaSitemap, FaCreditCard, FaUsers } from 'react-icons/fa'
 
 function TechStack() {
   const { t } = useTranslation();
@@ -29,14 +32,16 @@ function TechStack() {
     {
       id: 1,
       title: t('techStack.categories.backend'),
-      icon: FaCode,
+      icon: FaServer,
       color: "text-red-500",
       bgColor: "bg-red-500/10",
       borderColor: "border-red-500/20",
       technologies: [
         { name: "Ruby on Rails", icon: SiRubyonrails, level: "Expert", color: "#CC0000" },
-        { name: "JavaScript", icon: SiJavascript, level: "Expert", color: "#F7DF1E" },
-        { name: "React.js", icon: SiReact, level: "Advanced", color: "#61DAFB" }
+        { name: "PostgreSQL", icon: SiPostgresql, level: "Expert", color: "#4169E1" },
+        { name: "Sidekiq / Redis", icon: SiRedis, level: "Expert", color: "#DC382D" },
+        { name: "REST API Design", icon: FaServer, level: "Expert", color: "#94A3B8" },
+        { name: "RSpec", icon: FaCode, level: "Expert", color: "#EF4444" }
       ]
     },
     {
@@ -47,36 +52,70 @@ function TechStack() {
       bgColor: "bg-blue-500/10",
       borderColor: "border-blue-500/20",
       technologies: [
-        { name: "Kotlin", icon: SiKotlin, level: "Expert", color: "#7F52FF" },
+        { name: "Kotlin Multiplatform", icon: SiKotlin, level: "Expert", color: "#7F52FF" },
+        { name: "Compose Multiplatform", icon: SiJetpackcompose, level: "Expert", color: "#4285F4" },
+        { name: "Kotlin / Android SDK", icon: SiAndroid, level: "Expert", color: "#3DDC84" },
         { name: "Swift", icon: SiSwift, level: "Expert", color: "#F05138" },
-        { name: "iOS", icon: SiApple, level: "Expert", color: "#A3AAAE" },
-        { name: "Kotlin Multiplatform (KMP)", icon: SiKotlin, level: "Advanced", color: "#7F52FF" }
+        { name: "fastlane", icon: SiFastlane, level: "Expert", color: "#00F200" }
       ]
     },
     {
       id: 3,
-      title: t('techStack.categories.cloud'),
-      icon: FaCloud,
-      color: "text-primary-400",
-      bgColor: "bg-primary-500/10",
-      borderColor: "border-primary-500/20",
+      title: t('techStack.categories.frontend'),
+      icon: FaCode,
+      color: "text-yellow-400",
+      bgColor: "bg-yellow-500/10",
+      borderColor: "border-yellow-500/20",
       technologies: [
-        { name: "AWS", icon: FaAws, level: "Advanced", color: "#232F3E" },
-        { name: "Docker", icon: SiDocker, level: "Advanced", color: "#2496ED" },
-        { name: "Git", icon: SiGit, level: "Advanced", color: "#F05032" },
-        { name: "Vercel", icon: SiVercel, level: "Advanced", color: "#000000" }
+        { name: "Ember.js", icon: SiEmberdotjs, level: "Advanced", color: "#E04E39" },
+        { name: "JavaScript", icon: SiJavascript, level: "Advanced", color: "#F7DF1E" },
+        { name: "TypeScript", icon: SiTypescript, level: "Advanced", color: "#3178C6" },
+        { name: "Node.js", icon: SiNodedotjs, level: "Advanced", color: "#5FA04E" },
+        { name: "SCSS", icon: SiSass, level: "Advanced", color: "#CC6699" }
       ]
     },
     {
       id: 4,
-      title: t('techStack.categories.game'),
-      icon: FaGamepad,
+      title: t('techStack.categories.aws'),
+      icon: FaAws,
+      color: "text-primary-400",
+      bgColor: "bg-primary-500/10",
+      borderColor: "border-primary-500/20",
+      technologies: [
+        { name: "EC2 & Auto Scaling", icon: FaAws, level: "Expert", color: "#FF9900" },
+        { name: "S3 & CloudFront", icon: FaCloud, level: "Expert", color: "#569A31" },
+        { name: "RDS (PostgreSQL)", icon: FaDatabase, level: "Expert", color: "#4169E1" },
+        { name: "ELB & Route 53", icon: FaNetworkWired, level: "Expert", color: "#8C4FFF" },
+        { name: "VPC, IAM & ACM", icon: FaShieldAlt, level: "Expert", color: "#DD344C" }
+      ]
+    },
+    {
+      id: 5,
+      title: t('techStack.categories.devops'),
+      icon: FaTools,
+      color: "text-emerald-400",
+      bgColor: "bg-emerald-500/10",
+      borderColor: "border-emerald-500/20",
+      technologies: [
+        { name: "Docker", icon: SiDocker, level: "Expert", color: "#2496ED" },
+        { name: "GitLab CI/CD", icon: SiGitlab, level: "Expert", color: "#FC6D26" },
+        { name: "Capistrano", icon: FaRocket, level: "Expert", color: "#94A3B8" },
+        { name: "HashiCorp Vault", icon: SiVault, level: "Expert", color: "#FFD814" },
+        { name: "CloudWatch & OpenTelemetry", icon: SiOpentelemetry, level: "Expert", color: "#F5A800" }
+      ]
+    },
+    {
+      id: 6,
+      title: t('techStack.categories.architecture'),
+      icon: FaSitemap,
       color: "text-purple-400",
       bgColor: "bg-purple-500/10",
       borderColor: "border-purple-500/20",
       technologies: [
-        { name: "Unity", icon: SiUnity, level: "Intermediate", color: "#ffffff" },
-        { name: "C#", icon: FaCode, level: "Intermediate", color: "#239120" }
+        { name: "Multi-Tenant SaaS", icon: FaLayerGroup, level: "Expert", color: "#A78BFA" },
+        { name: "Clean Architecture", icon: FaSitemap, level: "Expert", color: "#C084FC" },
+        { name: "Payment Integrations", icon: FaCreditCard, level: "Expert", color: "#635BFF" },
+        { name: "Technical Leadership", icon: FaUsers, level: "Expert", color: "#F472B6" }
       ]
     }
   ], [t])
@@ -87,14 +126,14 @@ function TechStack() {
       id: 1,
       name: t('techStack.projects.crm.name'),
       description: t('techStack.projects.crm.description'),
-      techUsed: ["Ruby on Rails", "JavaScript", "AWS"],
+      techUsed: ["Ember.js", "JavaScript", "AWS"],
       highlight: t('techStack.projects.crm.highlight')
     },
     {
       id: 2,
       name: t('techStack.projects.ecommerce.name'),
       description: t('techStack.projects.ecommerce.description'),
-      techUsed: ["Ruby on Rails", "React", "APIs"],
+      techUsed: ["Ruby on Rails", "Stripe", "Openpay", "+8 gateways"],
       highlight: t('techStack.projects.ecommerce.highlight')
     },
     {

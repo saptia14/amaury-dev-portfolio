@@ -123,9 +123,9 @@ function About() {
             <div className="space-y-4 text-neutral-400 leading-relaxed">
               <p>
                 {t('about.description_1')}
-                <span className="text-primary-400">Kotlin & Swift</span>
-                {t('about.description_2')}
                 <span className="text-primary-400">Ruby on Rails</span>
+                {t('about.description_2')}
+                <span className="text-primary-400">Kotlin Multiplatform & Swift</span>
                 {t('about.description_3')}
               </p>
               <p>
@@ -136,7 +136,7 @@ function About() {
             {/* Quick Stats */}
             <div className="flex flex-wrap gap-6 pt-2">
               <div className="text-center">
-                <div className="text-2xl font-bold text-primary-400">12+</div>
+                <div className="text-2xl font-bold text-primary-400">8+</div>
                 <div className="text-xs text-neutral-500">{t('about.stats.projects')}</div>
               </div>
               <div className="w-px h-12 bg-neutral-800"></div>

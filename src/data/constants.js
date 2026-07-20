@@ -1,7 +1,7 @@
 export const PERSONAL_INFO = {
   name: "Emmanuel Amaury",
   fullName: "Emmanuel Amaury Fuentes Venegas",
-  role: "Tech Lead | Desarrollador Full Stack Senior",
+  role: "Tech Lead | Senior Full-Stack Engineer",
   location: "Querétaro, México",
   github: "https://github.com/saptia14",
   linkedin: "https://www.linkedin.com/in/amaurylink",
@@ -11,11 +11,13 @@ export const PERSONAL_INFO = {
 
 export const TECH_STACK = [
   "Ruby on Rails",
+  "PostgreSQL",
   "JavaScript",
+  "Ember.js",
   "Kotlin",
   "Swift",
   "KMP",
   "AWS",
-  "DevOps",
-  "Unity"
+  "Docker",
+  "GitLab CI"
 ];

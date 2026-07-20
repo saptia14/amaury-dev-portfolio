@@ -28,7 +28,7 @@ export const PDF_DATA = {
     personalInfo: {
       name: PERSONAL_INFO.fullName,
       email: PERSONAL_INFO.email,
-      phone: "",
+      phone: "+52 442-130-47-77",
       location: PERSONAL_INFO.location,
       linkedin: PERSONAL_INFO.linkedin,
       github: PERSONAL_INFO.github,
