@@ -90,18 +90,16 @@
       "project_1_desc": "El sistema de soporte de negocio detrás de ~28 operadores móviles de marca blanca: ciclo de vida del suscriptor, aprovisionamiento de SIMs, portabilidad numérica, facturación y pagos. 108 tablas, 371 endpoints REST y un modelo multi-tenant en árbol con credenciales de operador cifradas por tenant. Mayor contribuidor: 2,094 de 6,649 commits.",
       "project_2_title": "Plataforma de Pagos Multi-Gateway Unificada",
       "project_2_desc": "Diez procesadores de pago más referencias de efectivo OXXO consolidados detrás de un único protocolo de cobro, con persistencia de errores por pasarela y manejo de webhooks. Incluye un libro contable de saldos con 26 conceptos y bloqueo pesimista, un limitador antifraude configurable y facturación electrónica CFDI/SAT.",
-      "project_3_title": "App de Consumidor en Kotlin Multiplatform",
-      "project_3_desc": "Lideré la migración del ecosistema móvil de consumidor a Kotlin Multiplatform: una sola base de código compartida (336 archivos) para Android e iOS con Clean Architecture — 54 casos de uso, 43 pantallas, 30 ViewModels, interoperabilidad con Swift y theming dinámico para 6 marcas. Autor del 63% del código.",
-      "project_4_title": "Infraestructura Cloud AWS Multi-Cliente",
-      "project_4_desc": "Diseñé y operé la infraestructura AWS de ~28 marcas de marca blanca — más de 100 despliegues entre CRMs administrativos, dashboards, portales públicos de recarga y APIs. Alta disponibilidad Multi-AZ: EC2 con Auto Scaling detrás de ELB, RDS Multi-AZ (PostgreSQL), S3 + CloudFront, failover con Route 53, aislamiento con VPC y monitoreo con CloudWatch.",
+      "project_3_title": "Aprovisionamiento e Integraciones con Operadores",
+      "project_3_desc": "La capa de integración que conecta la plataforma con la red móvil de México: aprovisionamiento con Altán Redes (~40 operaciones — activación, suspensión, bloqueo de IMEI, perfiles HSS), un segundo MVNE (OXIO), ingesta batch de reportes CDR y de movilidad vía SFTP, la portabilidad numérica y facturación electrónica CFDI/SAT — 18 clientes de proveedores estandarizados en un solo contrato.",
+      "project_4_title": "App de Consumidor en Kotlin Multiplatform",
+      "project_4_desc": "Lideré la migración del ecosistema móvil de consumidor a Kotlin Multiplatform: una sola base de código compartida (336 archivos) para Android e iOS con Clean Architecture — 54 casos de uso, 43 pantallas, 30 ViewModels, interoperabilidad con Swift y theming dinámico para 6 marcas. Autor del 63% del código.",
       "project_5_title": "App Android POS para Distribuidores",
       "project_5_desc": "Aplicación de punto de venta para la red de distribuidores: activación de SIMs, alta de clientes, portabilidad numérica, verificación de IMEI y compra de saldos. 17 product flavors desde una sola base de código, seis procesadores de pago integrados de forma nativa y escaneo de códigos con ZXing. Principal contribuidor: 232 de 559 commits.",
       "project_6_title": "CRM Administrativo de Telecom",
       "project_6_desc": "El CRM de operaciones internas: 118 modelos, 337 rutas y 187 componentes con clases base CRUD compartidas, un sistema de permisos por bitmask y dashboards con exportación de gráficas y PDF. Desplegado por tenant vía GitLab CI a S3 + CloudFront. Principal contribuidor: 1,554 de 5,899 commits a lo largo de 6.5 años.",
-      "project_7_title": "DEMO Plataforma CRM Multi-Tenant",
-      "project_7_desc": "Frontend CRM multi-tenant para gestión de ventas empresariales, construido con arquitectura de componentes modulares e integración con APIs backend complejas para requerimientos diversos por tenant.",
-      "project_8_title": "Portafolio Profesional Dev",
-      "project_8_desc": "Portafolio profesional de alto rendimiento con fondos avanzados SVG/3D, sistemas de animación personalizados y soporte completo i18n. Diseñado para una experiencia premium y responsiva."
+      "project_7_title": "Infraestructura Cloud AWS Multi-Cliente",
+      "project_7_desc": "Diseñé y operé la infraestructura AWS de ~28 marcas de marca blanca — más de 100 despliegues entre CRMs administrativos, dashboards, portales públicos de recarga y APIs. Alta disponibilidad Multi-AZ: EC2 con Auto Scaling detrás de ELB, RDS Multi-AZ (PostgreSQL), S3 + CloudFront, failover con Route 53, aislamiento con VPC y monitoreo con CloudWatch."
     }
   },
   "contact": {

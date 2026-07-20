@@ -90,18 +90,16 @@
       "project_1_desc": "The business-support system behind ~28 white-label mobile carriers: subscriber lifecycle, SIM provisioning, number portability, billing and payments. 108 tables, 371 REST endpoints and a tenant-tree multi-tenancy model with encrypted per-tenant carrier credentials. Largest contributor: 2,094 of 6,649 commits.",
       "project_2_title": "Unified Multi-Gateway Payment Platform",
       "project_2_desc": "Ten payment processors plus OXXO cash references consolidated behind a single charge protocol with per-gateway error persistence and webhook handling. Includes a 26-reason dealer balance ledger with pessimistic locking, a configurable anti-fraud rate limiter and CFDI/SAT e-invoicing.",
-      "project_3_title": "Kotlin Multiplatform Consumer App",
-      "project_3_desc": "Led the migration of the consumer mobile ecosystem to Kotlin Multiplatform: one shared codebase (336 files) for Android and iOS with Clean Architecture — 54 use cases, 43 screens, 30 ViewModels, Swift interop and server-driven runtime theming across 6 brands. Authored 63% of the codebase.",
-      "project_4_title": "Multi-Client AWS Cloud Infrastructure",
-      "project_4_desc": "Architected and operated the AWS footprint for ~28 white-label brands — 100+ deployments spanning admin CRMs, dashboards, public top-up portals and APIs. Multi-AZ high availability: EC2 Auto Scaling behind ELB, Multi-AZ RDS (PostgreSQL), S3 + CloudFront, Route 53 failover, VPC isolation and CloudWatch monitoring.",
+      "project_3_title": "Carrier Provisioning & Telecom Integrations",
+      "project_3_desc": "The integration layer connecting the platform to Mexico's mobile network: Altán Redes provisioning (~40 operations — activation, suspension, IMEI lock, HSS profiles), a second MVNE (OXIO), SFTP batch ingestion of CDR and mobility reports, the number-portability clearinghouse and CFDI/SAT e-invoicing — 18 vendor clients standardized on one contract.",
+      "project_4_title": "Kotlin Multiplatform Consumer App",
+      "project_4_desc": "Led the migration of the consumer mobile ecosystem to Kotlin Multiplatform: one shared codebase (336 files) for Android and iOS with Clean Architecture — 54 use cases, 43 screens, 30 ViewModels, Swift interop and server-driven runtime theming across 6 brands. Authored 63% of the codebase.",
       "project_5_title": "Retailer & Dealer POS Android App",
       "project_5_desc": "Point-of-sale app for the dealer network: SIM activation, customer signup, number portability, IMEI verification and balance purchases. 17 product flavors from one codebase, six payment processors integrated natively and ZXing barcode scanning. Top contributor: 232 of 559 commits.",
       "project_6_title": "Telecom Admin CRM",
       "project_6_desc": "The internal operations CRM: 118 models, 337 routes and 187 components with shared CRUD base classes, a bitmask-driven permission system and dashboards with chart and PDF export. Deployed per tenant via GitLab CI to S3 + CloudFront. Top contributor: 1,554 of 5,899 commits over 6.5 years.",
-      "project_7_title": "DEMO Multi-Tenant CRM Platform",
-      "project_7_desc": "A multi-tenant CRM frontend for enterprise sales management, built around modular component architecture and integration with complex backend APIs across diverse tenant requirements.",
-      "project_8_title": "Professional Dev Portfolio",
-      "project_8_desc": "High-performance professional portfolio featuring advanced SVG/3D backgrounds, custom animation systems, and full i18n support. Designed for a premium responsive experience."
+      "project_7_title": "Multi-Client AWS Cloud Infrastructure",
+      "project_7_desc": "Architected and operated the AWS footprint for ~28 white-label brands — 100+ deployments spanning admin CRMs, dashboards, public top-up portals and APIs. Multi-AZ high availability: EC2 Auto Scaling behind ELB, Multi-AZ RDS (PostgreSQL), S3 + CloudFront, Route 53 failover, VPC isolation and CloudWatch monitoring."
     }
   },
   "contact": {

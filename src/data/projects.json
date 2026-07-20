@@ -46,8 +46,30 @@
   {
     "id": 3,
     "titleKey": "project_3_title",
-    "title": "Kotlin Multiplatform Consumer App",
+    "title": "Carrier Provisioning & Telecom Integrations",
     "descriptionKey": "project_3_desc",
+    "image": "/projects/user-app.png",
+    "tags": [
+      "Ruby on Rails",
+      "Altán Redes",
+      "OXIO",
+      "SFTP / CDR",
+      "Number Portability",
+      "CFDI/SAT"
+    ],
+    "category": "backend",
+    "githubUrl": "",
+    "demoUrl": "",
+    "period": "2021 - 2026",
+    "role": "Lead Backend Engineer",
+    "teamSize": 3,
+    "featured": true
+  },
+  {
+    "id": 4,
+    "titleKey": "project_4_title",
+    "title": "Kotlin Multiplatform Consumer App",
+    "descriptionKey": "project_4_desc",
     "image": "/projects/kmp-app.png",
     "tags": [
       "Kotlin Multiplatform",
@@ -63,28 +85,6 @@
     "period": "2024 - 2026",
     "role": "Mobile Architect / Lead Engineer",
     "teamSize": 3,
-    "featured": true
-  },
-  {
-    "id": 4,
-    "titleKey": "project_4_title",
-    "title": "Multi-Client AWS Cloud Infrastructure",
-    "descriptionKey": "project_4_desc",
-    "image": "/projects/topup.png",
-    "tags": [
-      "AWS",
-      "EC2 & Auto Scaling",
-      "S3 + CloudFront",
-      "RDS PostgreSQL",
-      "Route 53",
-      "High Availability"
-    ],
-    "category": "cloud",
-    "githubUrl": "",
-    "demoUrl": "",
-    "period": "2020 - 2026",
-    "role": "Cloud / DevOps Engineer",
-    "teamSize": 2,
     "featured": true
   },
   {
@@ -132,36 +132,23 @@
   {
     "id": 7,
     "titleKey": "project_7_title",
-    "title": "DEMO Multi-Tenant CRM Platform",
+    "title": "Multi-Client AWS Cloud Infrastructure",
     "descriptionKey": "project_7_desc",
-    "image": "https://i.imgur.com/F7zOrqd.png",
+    "image": "/projects/topup.png",
     "tags": [
-      "Ember.js",
-      "JavaScript",
-      "Docker",
-      "Vercel"
+      "AWS",
+      "EC2 & Auto Scaling",
+      "S3 + CloudFront",
+      "RDS PostgreSQL",
+      "Route 53",
+      "High Availability"
     ],
-    "category": "frontend",
-    "githubUrl": "https://github.com/saptia14/crm-frontend-demo-portfolio-amaury",
-    "demoUrl": "https://crm-demo.soyamaury.dev",
-    "period": "April 2026 - Present",
-    "role": "Fullstack Developer",
-    "teamSize": 1,
-    "featured": true
-  },
-  {
-    "id": 8,
-    "titleKey": "project_8_title",
-    "title": "Professional Dev Portfolio",
-    "descriptionKey": "project_8_desc",
-    "image": "/projects/portfolio-scroll.webp",
-    "tags": ["React 19", "Vite", "Tailwind CSS", "Framer Motion", "i18next", "SVG Animations"],
-    "category": "frontend",
-    "githubUrl": "https://github.com/saptia14/amaury-dev-portfolio",
-    "demoUrl": "https://soyamaury.dev/",
-    "period": "May 2026",
-    "role": "Creator & Architect",
-    "teamSize": 1,
+    "category": "cloud",
+    "githubUrl": "",
+    "demoUrl": "",
+    "period": "2020 - 2026",
+    "role": "Cloud / DevOps Engineer",
+    "teamSize": 2,
     "featured": true
   }
 ]
