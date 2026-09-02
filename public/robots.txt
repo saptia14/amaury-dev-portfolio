@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://soyamaury.dev/sitemap.xml

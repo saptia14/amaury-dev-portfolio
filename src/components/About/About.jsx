@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import { PERSONAL_INFO } from "../../data/constants";
+import { ABOUT_STACK, STATS } from "../../data/resume";
 import {
   FaCode,
   FaServer,
@@ -86,7 +87,7 @@ function About() {
               <div className="w-56 h-56 md:w-64 md:h-64 rounded-2xl overflow-hidden border-2 border-neutral-800 bg-neutral-900">
                 <img
                   src="/avatar.jpg"
-                  alt="Emmanuel Amaury Fuentes Venegas"
+                  alt={PERSONAL_INFO.fullName}
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
@@ -122,32 +123,37 @@ function About() {
 
             <div className="space-y-4 text-neutral-400 leading-relaxed">
               <p>
-                {t('about.description_1')}
-                <span className="text-primary-400">Ruby on Rails</span>
-                {t('about.description_2')}
-                <span className="text-primary-400">Kotlin Multiplatform & Swift</span>
-                {t('about.description_3')}
+                <Trans
+                  i18nKey="about.description_1"
+                  values={{
+                    years: STATS.yearsExperience,
+                    brands: STATS.brands,
+                    backend: ABOUT_STACK.backend,
+                    mobile: ABOUT_STACK.mobile,
+                  }}
+                  components={{ hl: <span className="text-primary-400" /> }}
+                />
               </p>
               <p>
-                {t('about.description_4')}
+                {t('about.description_2')}
               </p>
             </div>
 
             {/* Quick Stats */}
             <div className="flex flex-wrap gap-6 pt-2">
               <div className="text-center">
-                <div className="text-2xl font-bold text-primary-400">7+</div>
+                <div className="text-2xl font-bold text-primary-400">{STATS.projects}+</div>
                 <div className="text-xs text-neutral-500">{t('about.stats.projects')}</div>
               </div>
               <div className="w-px h-12 bg-neutral-800"></div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-primary-400">6+</div>
+                <div className="text-2xl font-bold text-primary-400">{STATS.yearsExperience}+</div>
                 <div className="text-xs text-neutral-500">{t('about.stats.exp')}</div>
               </div>
               <div className="w-px h-12 bg-neutral-800"></div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-primary-400">100%</div>
-                <div className="text-xs text-neutral-500">{t('about.stats.dedication')}</div>
+                <div className="text-2xl font-bold text-primary-400">~{STATS.brands}</div>
+                <div className="text-xs text-neutral-500">{t('about.stats.brands')}</div>
               </div>
             </div>
           </motion.div>

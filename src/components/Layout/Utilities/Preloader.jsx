@@ -18,15 +18,6 @@ const Preloader = memo(function Preloader() {
     };
   }, []);
 
-  // Code lines for animation
-  const codeLines = [
-    { text: 'const', type: 'keyword' },
-    { text: ' developer', type: 'variable' },
-    { text: ' = ', type: 'operator' },
-    { text: '"PORTFOLIO"', type: 'string' },
-    { text: ';', type: 'punctuation' },
-  ];
-
   return (
     <motion.div
       className="fixed inset-0 z-50 flex items-center justify-center bg-[#0a0a0c]"

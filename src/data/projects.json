@@ -1,153 +1,113 @@
 [
   {
-    "id": 1,
-    "titleKey": "project_1_title",
-    "title": "Multi-Tenant MVNO Core Platform",
-    "descriptionKey": "project_1_desc",
-    "image": "/projects/consumer-crm.png",
-    "tags": [
-      "Ruby on Rails",
-      "PostgreSQL",
-      "Sidekiq",
-      "Redis",
-      "AWS",
-      "Multi-tenant"
+    "id": "mvno_core",
+    "image": "/projects/consumer-crm.webp",
+    "tags": ["Ruby on Rails", "PostgreSQL", "Sidekiq", "Redis", "AWS", "Multi-tenant"],
+    "metrics": [
+      { "id": "tables", "value": "108" },
+      { "id": "endpoints", "value": "371" },
+      { "id": "commits", "value": "2,094 / 6,649" }
     ],
     "category": "backend",
     "githubUrl": "",
     "demoUrl": "",
-    "period": "2020 - 2026",
-    "role": "Tech Lead / Lead Backend Engineer",
+    "period": "2020 – 2026",
     "teamSize": 6,
     "featured": true
   },
   {
-    "id": 2,
-    "titleKey": "project_2_title",
-    "title": "Unified Multi-Gateway Payment Platform",
-    "descriptionKey": "project_2_desc",
-    "image": "/projects/ecommerce.png",
-    "tags": [
-      "Ruby on Rails",
-      "Stripe",
-      "Openpay",
-      "MercadoPago",
-      "OXXO",
-      "Fintech"
+    "id": "payments",
+    "image": "/projects/ecommerce.webp",
+    "tags": ["Ruby on Rails", "Stripe", "Openpay", "MercadoPago", "OXXO", "Fintech"],
+    "metrics": [
+      { "id": "gateways", "value": "10" },
+      { "id": "ledger_reasons", "value": "26" },
+      { "id": "fraud_rules", "value": "6" }
     ],
     "category": "backend",
     "githubUrl": "",
     "demoUrl": "",
-    "period": "2021 - 2026",
-    "role": "Lead Engineer",
+    "period": "2021 – 2026",
     "teamSize": 4,
     "featured": true
   },
   {
-    "id": 3,
-    "titleKey": "project_3_title",
-    "title": "Carrier Provisioning & Telecom Integrations",
-    "descriptionKey": "project_3_desc",
-    "image": "/projects/user-app.png",
-    "tags": [
-      "Ruby on Rails",
-      "Altán Redes",
-      "OXIO",
-      "SFTP / CDR",
-      "Number Portability",
-      "CFDI/SAT"
+    "id": "carrier_integrations",
+    "image": "/projects/user-app.webp",
+    "tags": ["Ruby on Rails", "Altán Redes", "OXIO", "SFTP / CDR", "Number Portability", "CFDI/SAT"],
+    "metrics": [
+      { "id": "operations", "value": "~40" },
+      { "id": "vendor_clients", "value": "18" },
+      { "id": "mvne", "value": "2" }
     ],
     "category": "backend",
     "githubUrl": "",
     "demoUrl": "",
-    "period": "2021 - 2026",
-    "role": "Lead Backend Engineer",
+    "period": "2021 – 2026",
     "teamSize": 3,
     "featured": true
   },
   {
-    "id": 4,
-    "titleKey": "project_4_title",
-    "title": "Kotlin Multiplatform Consumer App",
-    "descriptionKey": "project_4_desc",
-    "image": "/projects/kmp-app.png",
-    "tags": [
-      "Kotlin Multiplatform",
-      "Compose Multiplatform",
-      "Ktor",
-      "Koin",
-      "Room",
-      "iOS & Android"
+    "id": "kmp_app",
+    "image": "/projects/kmp-app.webp",
+    "tags": ["Kotlin Multiplatform", "Compose Multiplatform", "Ktor", "Koin", "Room", "iOS & Android"],
+    "metrics": [
+      { "id": "use_cases", "value": "54" },
+      { "id": "screens", "value": "43" },
+      { "id": "authored", "value": "63%" }
     ],
     "category": "mobile",
     "githubUrl": "",
     "demoUrl": "",
-    "period": "2024 - 2026",
-    "role": "Mobile Architect / Lead Engineer",
+    "period": "2024 – 2026",
     "teamSize": 3,
     "featured": true
   },
   {
-    "id": 5,
-    "titleKey": "project_5_title",
-    "title": "Retailer & Dealer POS Android App",
-    "descriptionKey": "project_5_desc",
-    "image": "/projects/pos-app.png",
-    "tags": [
-      "Kotlin",
-      "MVVM",
-      "Room",
-      "ZXing",
-      "17 Product Flavors"
+    "id": "pos_android",
+    "image": "/projects/pos-app.webp",
+    "tags": ["Kotlin", "MVVM", "Room", "ZXing", "17 Product Flavors"],
+    "metrics": [
+      { "id": "flavors", "value": "17" },
+      { "id": "gateways", "value": "6" },
+      { "id": "commits", "value": "232 / 559" }
     ],
     "category": "mobile",
     "githubUrl": "",
     "demoUrl": "",
-    "period": "2021 - 2026",
-    "role": "Lead Android Engineer",
+    "period": "2021 – 2026",
     "teamSize": 4,
     "featured": true
   },
   {
-    "id": 6,
-    "titleKey": "project_6_title",
-    "title": "Telecom Admin CRM",
-    "descriptionKey": "project_6_desc",
-    "image": "/projects/sales-admin.png",
-    "tags": [
-      "Ember.js",
-      "JavaScript",
-      "SCSS",
-      "GitLab CI",
-      "S3 + CloudFront"
+    "id": "admin_crm",
+    "image": "/projects/sales-admin.webp",
+    "tags": ["Ember.js", "JavaScript", "SCSS", "GitLab CI", "S3 + CloudFront"],
+    "metrics": [
+      { "id": "models", "value": "118" },
+      { "id": "routes", "value": "337" },
+      { "id": "commits", "value": "1,554 / 5,899" }
     ],
     "category": "frontend",
     "githubUrl": "",
     "demoUrl": "",
-    "period": "2019 - 2026",
-    "role": "Lead Frontend Engineer",
+    "period": "2019 – 2026",
     "teamSize": 5,
     "featured": true
   },
   {
-    "id": 7,
-    "titleKey": "project_7_title",
-    "title": "Multi-Client AWS Cloud Infrastructure",
-    "descriptionKey": "project_7_desc",
-    "image": "/projects/topup.png",
-    "tags": [
-      "AWS",
-      "EC2 & Auto Scaling",
-      "S3 + CloudFront",
-      "RDS PostgreSQL",
-      "Route 53",
-      "High Availability"
+    "id": "aws_infra",
+    "image": "/projects/topup.webp",
+    "tags": ["AWS", "EC2 & Auto Scaling", "S3 + CloudFront", "RDS PostgreSQL", "Route 53", "High Availability"],
+    "metrics": [
+      { "id": "brands", "value": "~28" },
+      { "id": "deployments", "value": "100+" },
+      { "id": "availability_zones", "value": "Multi-AZ" }
     ],
     "category": "cloud",
     "githubUrl": "",
     "demoUrl": "",
-    "period": "2020 - 2026",
-    "role": "Cloud / DevOps Engineer",
+    "period": "2020 – 2026",
     "teamSize": 2,
     "featured": true
   }

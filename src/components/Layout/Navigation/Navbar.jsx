@@ -16,12 +16,12 @@ import { useTranslation } from "react-i18next";
 import { PERSONAL_INFO } from "../../../data/constants";
 
 const NAV_ITEMS = [
-  { id: "home", label: "Home", icon: FaHome },
-  { id: "about", label: "About", icon: FaUser },
-  { id: "projects", label: "Projects", icon: FaProjectDiagram },
-  { id: "tech-stack", label: "Tech Stack", icon: FaLayerGroup },
-  { id: "resume", label: "Resume", icon: FaFileAlt },
-  { id: "contact", label: "Contact", icon: FaEnvelope },
+  { id: "home", icon: FaHome },
+  { id: "about", icon: FaUser },
+  { id: "projects", icon: FaProjectDiagram },
+  { id: "tech-stack", icon: FaLayerGroup },
+  { id: "resume", icon: FaFileAlt },
+  { id: "contact", icon: FaEnvelope },
 ];
 
 function Navbar() {
@@ -123,10 +123,10 @@ function Navbar() {
               >
                 {/* Logo glow on hover */}
                 <div className="absolute -inset-2 bg-primary-500/0 group-hover:bg-primary-500/5 rounded-2xl transition-colors duration-300" />
-                <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-neutral-800 to-neutral-900 border border-neutral-700/50 group-hover:border-primary-500/40 flex items-center justify-center overflow-hidden transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(245,158,11,0.1)]">
+                <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-neutral-800 to-neutral-900 border border-neutral-700/50 group-hover:border-primary-500/40 flex items-center justify-center overflow-hidden transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(225,29,72,0.15)]">
                   <img
-                    src="/logo-bg.png"
-                    alt="Logo"
+                    src="/icons/icon-192.png"
+                    alt={t('nav.logo_alt')}
                     className="w-6 h-6 object-contain"
                   />
                 </div>
@@ -135,7 +135,7 @@ function Navbar() {
                     {PERSONAL_INFO.name.split(' ')[0]}
                   </span>
                   <span className="text-[10px] text-neutral-500 font-medium tracking-wider uppercase">
-                    Developer
+                    {t('nav.tagline')}
                   </span>
                 </div>
               </button>
@@ -144,8 +144,8 @@ function Navbar() {
               <button
                 onClick={() => i18n.changeLanguage(i18n.language === 'en' ? 'es' : 'en')}
                 className="flex items-center justify-center w-10 h-10 rounded-xl bg-neutral-900/50 border border-neutral-800/40 hover:bg-neutral-800 hover:border-primary-500/40 transition-all duration-300 text-lg group relative"
-                aria-label="Toggle Language"
-                title={i18n.language === 'en' ? 'Cambiar a Español' : 'Switch to English'}
+                aria-label={t('nav.toggle_language')}
+                title={t('nav.switch_language')}
               >
                 <span className="transform group-hover:scale-110 transition-transform duration-200">
                   {i18n.language === 'en' ? '🇺🇸' : '🇲🇽'}
@@ -186,7 +186,7 @@ function Navbar() {
                           isActive ? "text-primary-400" : ""
                         }`}
                       />
-                      <span className="relative z-10">{t(`nav.${item.id === 'tech-stack' ? 'skills' : item.id}`) || item.label}</span>
+                      <span className="relative z-10">{t(`nav.${item.id === 'tech-stack' ? 'skills' : item.id}`)}</span>
                     </button>
                   );
                 })}
@@ -197,7 +197,7 @@ function Navbar() {
             <div className="hidden lg:block">
               <button
                 onClick={() => scrollToSection("contact")}
-                className="group relative overflow-hidden px-5 py-2.5 bg-gradient-to-r from-primary-500 to-primary-600 text-neutral-900 text-sm font-bold rounded-xl transition-all duration-300 hover:shadow-[0_4px_20px_rgba(245,158,11,0.3)] flex items-center gap-2"
+                className="group relative overflow-hidden px-5 py-2.5 bg-gradient-to-r from-primary-500 to-primary-600 text-white text-sm font-bold rounded-xl transition-all duration-300 hover:shadow-[0_4px_20px_rgba(225,29,72,0.35)] flex items-center gap-2"
               >
                 {/* Shine sweep */}
                 <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
@@ -210,7 +210,7 @@ function Navbar() {
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="lg:hidden relative w-10 h-10 rounded-xl bg-neutral-800/60 border border-neutral-700/40 flex items-center justify-center text-neutral-300 hover:text-white hover:border-primary-500/30 transition-all duration-200"
-              aria-label={isOpen ? "Close menu" : "Open menu"}
+              aria-label={isOpen ? t('nav.close_menu') : t('nav.open_menu')}
             >
               <AnimatePresence mode="wait" initial={false}>
                 {isOpen ? (
@@ -269,17 +269,17 @@ function Navbar() {
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500/20 to-primary-600/10 border border-primary-500/20 flex items-center justify-center">
                     <img
-                      src="/logo-bg.png"
-                      alt="Logo"
+                      src="/icons/icon-192.png"
+                      alt={t('nav.logo_alt')}
                       className="w-5 h-5 object-contain"
                     />
                   </div>
                   <div>
                     <span className="text-sm font-bold text-neutral-100 block leading-tight">
-                      Navigation
+                      {t('nav.menu_title')}
                     </span>
                     <span className="text-[10px] text-neutral-600">
-                      portfolio
+                      {t('nav.menu_subtitle')}
                     </span>
                   </div>
                 </div>
@@ -318,7 +318,7 @@ function Navbar() {
                       >
                         <Icon className="w-3.5 h-3.5" />
                       </div>
-                      <span>{t(`nav.${item.id === 'tech-stack' ? 'skills' : item.id}`) || item.label}</span>
+                      <span>{t(`nav.${item.id === 'tech-stack' ? 'skills' : item.id}`)}</span>
                       {isActive && (
                         <div className="ml-auto w-1.5 h-1.5 rounded-full bg-primary-400" />
                       )}
@@ -330,13 +330,13 @@ function Navbar() {
               <div className="px-4 py-5 border-t border-neutral-800/40 space-y-3">
                 <button
                   onClick={() => handleMobileNavClick("contact")}
-                  className="w-full py-3 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-400 hover:to-primary-500 text-neutral-900 text-sm font-bold rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-primary-500/10"
+                  className="w-full py-3 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-400 hover:to-primary-500 text-white text-sm font-bold rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-primary-500/10"
                 >
                   {t('home.btn_contact')}
                   <FaArrowRight className="w-3 h-3" />
                 </button>
                 <p className="text-[10px] text-neutral-600 text-center">
-                  © 2026 {PERSONAL_INFO.fullName}
+                  © {new Date().getFullYear()} {PERSONAL_INFO.fullName}
                 </p>
               </div>
             </motion.aside>

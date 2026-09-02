@@ -1,4 +1,5 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import { FaExclamationTriangle, FaRedo } from 'react-icons/fa';
 
 class ErrorBoundary extends React.Component {
@@ -16,7 +17,7 @@ class ErrorBoundary extends React.Component {
   componentDidCatch(error, errorInfo) {
     // Log error details
     console.error('ErrorBoundary caught an error:', error, errorInfo);
-    
+
     this.setState({
       error: error,
       errorInfo: errorInfo
@@ -31,53 +32,55 @@ class ErrorBoundary extends React.Component {
   };
 
   render() {
+    // Class component: el copy llega por withTranslation, no por useTranslation.
+    const { t, fallbackMessage, children } = this.props;
+
     if (this.state.hasError) {
       // Custom error UI
       return (
-        <div className="min-h-screen bg-slate-900 flex items-center justify-center px-6">
+        <div className="min-h-screen bg-[rgb(var(--background-end-rgb))] flex items-center justify-center px-6">
           <div className="max-w-md w-full text-center">
-            <div className="bg-slate-800 rounded-lg p-8 shadow-xl">
-              <FaExclamationTriangle className="text-red-500 text-6xl mx-auto mb-6" />
-              
-              <h1 className="text-2xl font-bold text-white mb-4">
-                Oops! Something went wrong
+            <div className="glass-effect rounded-2xl p-8 shadow-xl border border-neutral-700/50">
+              <FaExclamationTriangle className="text-primary-500 text-6xl mx-auto mb-6" />
+
+              <h1 className="text-2xl font-bold text-neutral-50 mb-4">
+                {t('common.error_title')}
               </h1>
-              
-              <p className="text-slate-300 mb-6">
-                {this.props.fallbackMessage || 
-                 "We're sorry, but something unexpected happened. Please try refreshing the page."}
+
+              <p className="text-neutral-300 mb-6">
+                {fallbackMessage || t('common.error_page')}
               </p>
 
               <div className="space-y-3">
                 <button
                   onClick={this.handleRetry}
-                  className="w-full bg-sky-500 hover:bg-sky-600 text-white font-medium py-3 px-4 rounded-lg transition-colors flex items-center justify-center gap-2"
+                  className="w-full bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-400 hover:to-primary-500 text-white font-medium py-3 px-4 rounded-xl transition-colors flex items-center justify-center gap-2"
                 >
                   <FaRedo className="text-sm" />
-                  Try Again
+                  {t('common.retry')}
                 </button>
-                
+
                 <button
                   onClick={() => window.location.reload()}
-                  className="w-full bg-slate-700 hover:bg-slate-600 text-white font-medium py-3 px-4 rounded-lg transition-colors"
+                  className="w-full bg-neutral-800 hover:bg-neutral-700 text-neutral-200 font-medium py-3 px-4 rounded-xl transition-colors"
                 >
-                  Refresh Page
+                  {t('common.reload')}
                 </button>
               </div>
 
               {/* Show error details in development */}
               {import.meta.env.DEV && this.state.error && (
                 <details className="mt-6 text-left">
-                  <summary className="text-slate-400 cursor-pointer hover:text-slate-300">
+                  <summary className="text-neutral-400 cursor-pointer hover:text-neutral-300">
                     Error Details (Development Only)
                   </summary>
-                  <div className="mt-3 p-4 bg-slate-900 rounded text-xs text-red-400 overflow-auto max-h-40">
+                  <div className="mt-3 p-4 bg-neutral-950 rounded text-xs text-primary-300 overflow-auto max-h-40">
                     <div className="font-bold mb-2">Error:</div>
                     <div className="mb-4">{this.state.error.toString()}</div>
-                    
+
                     <div className="font-bold mb-2">Stack Trace:</div>
                     <pre className="whitespace-pre-wrap">
-                      {this.state.errorInfo.componentStack}
+                      {this.state.errorInfo?.componentStack}
                     </pre>
                   </div>
                 </details>
@@ -88,8 +91,10 @@ class ErrorBoundary extends React.Component {
       );
     }
 
-    return this.props.children;
+    return children;
   }
 }
 
-export default ErrorBoundary;
+const TranslatedErrorBoundary = withTranslation()(ErrorBoundary);
+
+export default TranslatedErrorBoundary;

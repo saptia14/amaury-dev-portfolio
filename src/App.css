@@ -1,5 +1,5 @@
-@import "tailwindcss";
-
+/* Utilidades de animacion. Tailwind se importa en index.css, que main.jsx
+   carga antes que este archivo: aqui solo va CSS plano (sin @apply). */
 /* Main styles for the amaury-dev-portfolio app */
 
 /* Animation for blinking cursor in TypeWriter component */
@@ -70,43 +70,6 @@
   animation: float 3s ease-in-out infinite;
 }
 
-/* Pulse animation */
-@keyframes pulse-slow {
-
-  0%,
-  100% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0.9;
-  }
-}
-
-.animate-pulse-slow {
-  animation: pulse-slow 4s ease-in-out infinite;
-}
-
-/* Shimmer effect */
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-
-  100% {
-    background-position: 200% 0;
-  }
-}
-
-.animate-shimmer {
-  background: linear-gradient(90deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.05) 50%,
-      rgba(255, 255, 255, 0) 100%);
-  background-size: 200% 100%;
-  animation: shimmer 3s infinite;
-}
-
 /* Blur in animation */
 @keyframes blurIn {
   from {
@@ -146,23 +109,6 @@
   opacity: 0;
 }
 
-/* Slow bounce animation */
-@keyframes bounce-slow {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-.animate-bounce-slow {
-  animation: bounce-slow 3s ease-in-out infinite;
-}
-
 /* Infinite marquee scroll */
 @keyframes marquee {
   0% {
@@ -195,9 +141,10 @@
   animation-delay: 1s;
 }
 
-/* Advanced effects - Amber accent */
+/* Advanced effects - Crimson accent */
 .text-glow {
-  text-shadow: 0 0 10px rgba(234, 179, 8, 0.4), 0 0 20px rgba(234, 179, 8, 0.2);
+  text-shadow: 0 0 10px color-mix(in srgb, var(--color-primary-500) 40%, transparent),
+    0 0 20px color-mix(in srgb, var(--color-primary-500) 20%, transparent);
 }
 
 .hover-scale {
@@ -219,9 +166,9 @@
 
 /* Glass morphism effect - Dark elegant */
 .glassmorphism {
-  background: rgba(14, 14, 14, 0.85);
+  background: rgba(42, 17, 33, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(38, 38, 38, 0.6);
+  border: 1px solid rgba(74, 32, 57, 0.6);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
 }

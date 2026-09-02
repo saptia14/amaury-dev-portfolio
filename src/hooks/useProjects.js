@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import projectsData from '../data/projects.json';
 
 /**
@@ -45,7 +45,7 @@ export const useProjects = (filter = 'all') => {
  */
 export const getProjectCategories = (projects) => {
   if (!Array.isArray(projects) || projects.length === 0) {
-    return [{ value: 'all', label: 'All Projects', count: 0 }];
+    return [{ value: 'all', count: 0 }];
   }
 
   const categoriesMap = projects.reduce((acc, project) => {
@@ -55,23 +55,11 @@ export const getProjectCategories = (projects) => {
     return acc;
   }, {});
 
-  const categoryObjects = [
-    { value: 'all', label: 'All', count: projects.length }
-  ];
+  const categoryObjects = [{ value: 'all', count: projects.length }];
 
-  const categoryLabels = {
-    fullstack: 'Full Stack',
-    frontend: 'Frontend',
-    backend: 'Backend',
-    mobile: 'Mobile Apps'
-  };
-
+  // Sin labels: Projects.jsx los resuelve con `projects.filter_<value>`.
   Object.entries(categoriesMap).forEach(([category, count]) => {
-    categoryObjects.push({
-      value: category,
-      label: categoryLabels[category] || category.charAt(0).toUpperCase() + category.slice(1),
-      count
-    });
+    categoryObjects.push({ value: category, count });
   });
 
   return categoryObjects;

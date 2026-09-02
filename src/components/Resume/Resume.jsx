@@ -1,27 +1,16 @@
-import { useState, useCallback, useMemo } from 'react'
-import { FaDownload, FaEye, FaFilePdf, FaSpinner, FaGraduationCap, FaBriefcase, FaCertificate, FaAward } from 'react-icons/fa'
-import SEOHead from '../SEO/SEOHead'
-import { SEO_CONFIGS } from '../SEO/seoConfigs'
+import { useState, useCallback } from 'react'
+import { FaDownload, FaEye, FaFilePdf, FaGraduationCap, FaBriefcase } from 'react-icons/fa'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { PERSONAL_INFO } from '../../data/constants'
+import { EDUCATION } from '../../data/resume'
+import ExperienceTimeline from './ExperienceTimeline'
+import Languages from './Languages'
 
 function Resume() {
   const { t } = useTranslation();
   const [showPDF, setShowPDF] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
   const [pdfError, setPdfError] = useState(false)
-
-  // Use useCallback to prevent unnecessary re-renders
-  const handleViewPDF = useCallback(() => {
-    setIsLoading(true)
-    setPdfError(false)
-    // Reduced loading time for better UX
-    setTimeout(() => {
-      setIsLoading(false)
-      setShowPDF(true)
-    }, 500)
-  }, [])
 
   const handleDownloadPDF = useCallback(() => {
     const link = document.createElement('a')
@@ -32,13 +21,10 @@ function Resume() {
     document.body.removeChild(link)
   }, [])
 
-  // Load dynamic data from translations
-  const experiences = t('resume.experiences', { returnObjects: true }) || [];
-  const education = t('resume.education', { returnObjects: true }) || [];
+  // El orden y los ids viven en src/data/resume.js; los locales solo el copy.
 
   return (
     <>
-      <SEOHead {...SEO_CONFIGS.resume} />
       <section className="section-padding pt-28">
         <div className="max-w-6xl mx-auto">
           {/* Header Section */}
@@ -115,7 +101,7 @@ function Resume() {
                     <iframe
                       src={`${PERSONAL_INFO.resumePath}#toolbar=1&navpanes=1&scrollbar=1&page=1&view=FitH`}
                       className="w-full h-[600px] rounded-lg border border-neutral-700/30"
-                      title="Resume PDF"
+                      title={t('resume.preview_title')}
                       loading="lazy"
                       onError={() => setPdfError(true)}
                       onLoad={() => setPdfError(false)}
@@ -131,7 +117,7 @@ function Resume() {
                           href={PERSONAL_INFO.resumePath}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 bg-primary-500 hover:bg-primary-600 text-neutral-900 font-medium px-4 py-2 rounded-lg text-sm transition-colors duration-300"
+                          className="inline-flex items-center gap-2 bg-primary-500 hover:bg-primary-600 text-white font-medium px-4 py-2 rounded-lg text-sm transition-colors duration-300"
                         >
                           <FaEye className="text-sm" />
                           {t('resume.view_browser')}
@@ -165,48 +151,7 @@ function Resume() {
               </h2>
             </div>
 
-            <div className="space-y-8">
-              {experiences.map((exp, index) => (
-                <motion.div
-                  key={index}
-                  className="glass-effect rounded-2xl p-8 border border-neutral-700/50"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.2 }}
-                  viewport={{ once: true }}
-                  whileHover={{ 
-                    y: -5,
-                    transition: { duration: 0.3 }
-                  }}
-                >
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                    <div>
-                      <h3 className="text-xl font-bold text-neutral-100 mb-1">
-                        {exp.title}
-                      </h3>
-                      <p className="text-primary-400 font-semibold">
-                        {exp.company}
-                      </p>
-                    </div>
-                    <div className="text-neutral-400 text-sm mt-2 md:mt-0 text-right">
-                      <p>{exp.period}</p>
-                      <p>{exp.location}</p>
-                    </div>
-                  </div>
-                  <ul className="space-y-2">
-                    {exp.achievements.map((achievement, i) => (
-                      <li
-                        key={i}
-                        className="text-neutral-300 flex items-start gap-3"
-                      >
-                        <span className="w-2 h-2 bg-primary-400 rounded-full mt-2 flex-shrink-0"></span>
-                        {achievement}
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              ))}
-            </div>
+            <ExperienceTimeline />
           </div>
 
           {/* Education Section */}
@@ -225,42 +170,43 @@ function Resume() {
               </div>
 
               <div className="flex-1">
-                {education.map((edu, index) => (
+                {EDUCATION.map((edu, index) => (
                 <motion.div
-                  key={index}
+                  key={edu.id}
                   className="glass-effect rounded-2xl p-6 border border-neutral-700/50"
                   initial={{ opacity: 0, x: -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.2 }}
+                  transition={{ delay: 0.2 + index * 0.1 }}
                   viewport={{ once: true }}
-                  whileHover={{ 
+                  whileHover={{
                     scale: 1.02,
                     transition: { duration: 0.2 }
                   }}
                 >
                   <h3 className="text-lg font-bold text-neutral-100 mb-2">
-                    {edu.degree}
+                    {t(`resume.education.${edu.id}.degree`)}
                   </h3>
                   <p className="text-primary-400 font-semibold mb-1">
                     {edu.institution}
                   </p>
                   <div className="flex justify-between items-center text-neutral-400 text-sm mb-2">
-                    <span>{edu.period}</span>
-                    <span>{edu.location}</span>
+                    <span>{t(`resume.education.${edu.id}.period`)}</span>
+                    <span>{edu.city}</span>
                   </div>
                   <p className="text-neutral-300 font-semibold mb-3">
-                    {t('resume.status')}: {edu.gpa}
+                    {t('resume.status')}: {t(`resume.education.${edu.id}.status`)}
                   </p>
-                  {edu.details && (
-                    <p className="text-neutral-400 text-sm leading-relaxed">
-                      {edu.details}
-                    </p>
-                  )}
+                  <p className="text-neutral-400 text-sm leading-relaxed">
+                    {t(`resume.education.${edu.id}.details`)}
+                  </p>
                 </motion.div>
               ))}
               </div>
             </div>
           </div>
+
+          {/* Languages */}
+          <Languages />
 
           {/* Call to Action */}
           <motion.div
@@ -277,7 +223,7 @@ function Resume() {
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <FaDownload className="text-neutral-900 text-2xl" />
+              <FaDownload className="text-white text-2xl" />
             </motion.div>
 
             <h3 className="text-3xl font-bold text-neutral-100 mb-4">

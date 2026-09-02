@@ -3,11 +3,9 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <meta http-equiv="Pragma" content="no-cache" />
-  <meta http-equiv="Expires" content="0" />
-  <link rel="icon" type="image/png" href="/logo.png" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, shrink-to-fit=no" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -15,7 +13,7 @@
 
   <!-- PWA Manifest -->
   <link rel="manifest" href="/manifest.json" />
-  <meta name="theme-color" content="#1e293b" />
+  <meta name="theme-color" content="#210b1a" />
 
   <!-- Primary Meta Tags -->
   <title>Amaury Portfolio - Tech Lead & Senior Full-Stack Engineer | Ruby on Rails, Kotlin Multiplatform, AWS</title>
@@ -24,9 +22,8 @@
     content="Tech Lead and Senior Full-Stack Engineer specializing in Ruby on Rails, Ember.js, PostgreSQL, Kotlin Multiplatform, Swift and AWS cloud architecture. Explore my projects, skills, and experience building scalable multi-tenant platforms." />
   <meta name="keywords"
     content="portfolio, tech lead, senior full-stack engineer, ruby on rails developer, ember.js developer, postgresql, kotlin multiplatform developer, swift developer, aws cloud architect, web development, software engineer, frontend, backend, mobile development" />
-  <meta name="author" content="Amaury Fuentes" />
+  <meta name="author" content="Emmanuel Amaury Fuentes Venegas" />
   <meta name="robots" content="index, follow" />
-  <meta name="language" content="English" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
@@ -34,8 +31,15 @@
   <meta property="og:title" content="Amaury Portfolio - Tech Lead & Senior Full-Stack Engineer" />
   <meta property="og:description"
     content="Tech Lead and Senior Full-Stack Engineer specializing in Ruby on Rails, Kotlin Multiplatform, Swift and AWS cloud architecture." />
-  <meta property="og:image" content="https://soyamaury.dev/logo.png" />
+  <meta property="og:image" content="https://soyamaury.dev/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:alt"
+    content="Emmanuel Amaury Fuentes Venegas — Tech Lead and Senior Full-Stack Engineer" />
   <meta property="og:site_name" content="Amaury Portfolio" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="es_MX" />
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
@@ -43,29 +47,83 @@
   <meta property="twitter:title" content="Amaury Portfolio - Tech Lead & Senior Full-Stack Engineer" />
   <meta property="twitter:description"
     content="Tech Lead and Senior Full-Stack Engineer specializing in Ruby on Rails, Kotlin Multiplatform, Swift and AWS cloud architecture." />
-  <meta property="twitter:image" content="https://soyamaury.dev/logo.png" />
+  <meta property="twitter:image" content="https://soyamaury.dev/og-card.png" />
 
   <!-- Additional SEO -->
-  <meta name="theme-color" content="#0ea5e9" />
-  <meta name="msapplication-TileColor" content="#0ea5e9" />
+  <meta name="msapplication-TileColor" content="#210b1a" />
   <link rel="canonical" href="https://soyamaury.dev/" />
 
-  <!-- Preconnect to external domains -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Structured data. Un unico nodo: usePageSeo reescribe su contenido al cambiar de idioma. -->
+  <script type="application/ld+json" id="ld-graph">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://soyamaury.dev/#person",
+        "name": "Emmanuel Amaury Fuentes Venegas",
+        "alternateName": "Amaury",
+        "jobTitle": "Tech Lead / Senior Full-Stack Engineer",
+        "url": "https://soyamaury.dev",
+        "image": "https://soyamaury.dev/avatar.jpg",
+        "email": "mailto:fuentesamaury@hotmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Querétaro",
+          "addressCountry": "MX"
+        },
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Instituto Tecnológico de Querétaro"
+        },
+        "knowsAbout": [
+          "Ruby on Rails", "PostgreSQL", "Kotlin Multiplatform", "Compose Multiplatform",
+          "Swift", "Ember.js", "TypeScript", "AWS", "Docker", "Multi-Tenant SaaS",
+          "Payment Integrations", "Clean Architecture", "Technical Leadership"
+        ],
+        "knowsLanguage": [
+          { "@type": "Language", "name": "Spanish" },
+          { "@type": "Language", "name": "English" }
+        ],
+        "sameAs": [
+          "https://github.com/saptia14",
+          "https://www.linkedin.com/in/amaurylink"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://soyamaury.dev/#website",
+        "url": "https://soyamaury.dev",
+        "name": "Emmanuel Amaury Fuentes Venegas",
+        "inLanguage": "en",
+        "publisher": { "@id": "https://soyamaury.dev/#person" }
+      },
+      {
+        "@type": "ProfilePage",
+        "url": "https://soyamaury.dev",
+        "mainEntity": { "@id": "https://soyamaury.dev/#person" }
+      }
+    ]
+  }
+  </script>
 
   <!-- Critical CSS inlining for faster mobile load -->
   <style>
     /* Critical above-the-fold CSS */
+    html,
+    body {
+      background-color: #210b1a;
+    }
+
     #root {
       min-height: 100vh;
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+      background: linear-gradient(135deg, #3b152e 0%, #210b1a 55%, #210b1a 100%);
     }
 
     .preloader {
       position: fixed;
       inset: 0;
-      background: #0f172a;
+      background: #210b1a;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -75,8 +133,8 @@
     .spinner {
       width: 2rem;
       height: 2rem;
-      border: 2px solid #374151;
-      border-top: 2px solid #60a5fa;
+      border: 2px solid #38182c;
+      border-top: 2px solid #e11d48;
       border-radius: 50%;
       animation: spin 1s linear infinite;
     }

@@ -1,6 +1,9 @@
 import { useEffect, useState, Suspense, lazy } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import './App.css'
+
+import { usePageSeo } from './components/SEO/usePageSeo'
 
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary'
 import Navbar from './components/Layout/Navigation/Navbar'
@@ -22,6 +25,9 @@ const TechStack = lazy(() => import('./components/TechStack/TechStack.jsx'))
 const Contact = lazy(() => import('./components/Contact/Contact'))
 
 function App() {
+  const { t } = useTranslation();
+  // Fuente unica de SEO. Una sola llamada, en el nivel de pagina.
+  usePageSeo();
   const [loading, setLoading] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -53,17 +59,17 @@ function App() {
   }, []);
 
   // Lightweight fallback for mobile
-  const FastFallback = ({ message = 'Loading...' }) => (
+  const FastFallback = () => (
     <div className="py-4 flex items-center justify-center min-h-[30vh]">
       <div className="text-center">
         <div className="w-4 h-4 border border-neutral-700 border-t-primary-500 rounded-full animate-spin mx-auto mb-1"></div>
-        <p className="text-neutral-500 text-xs">{message}</p>
+        <p className="text-neutral-500 text-xs">{t('common.loading')}</p>
       </div>
     </div>
   );
 
   return (
-    <ErrorBoundary fallbackMessage="Something went wrong. Please refresh the page.">
+    <ErrorBoundary fallbackMessage={t('common.error_page')}>
       <Router>
         <div className="App min-h-screen relative">
           {/* Global Background - Rich Dark Theme */}
@@ -81,7 +87,7 @@ function App() {
               <Navbar />
               <main className="relative">
                 <ScrollToTop />
-                <ErrorBoundary fallbackMessage="There was an error loading the page content.">
+                <ErrorBoundary fallbackMessage={t('common.error_section')}>
                   <Routes>
                     {/* Main Portfolio Page - Mobile Optimized */}
                     <Route path="/" element={
@@ -92,36 +98,36 @@ function App() {
                         </MobileSafeSection>
 
                         {/* About section - lazy load with intersection observer */}
-                        <MobileSafeSection id="about" fallback={<FastFallback message="Loading about..." />}>
-                          <Suspense fallback={<FastFallback message="Loading about..." />}>
+                        <MobileSafeSection id="about" fallback={<FastFallback />}>
+                          <Suspense fallback={<FastFallback />}>
                             <About />
                           </Suspense>
                         </MobileSafeSection>
 
                         {/* Projects section */}
-                        <MobileSafeSection id="projects" fallback={<FastFallback message="Loading projects..." />}>
-                          <Suspense fallback={<FastFallback message="Loading projects..." />}>
+                        <MobileSafeSection id="projects" fallback={<FastFallback />}>
+                          <Suspense fallback={<FastFallback />}>
                             <Projects />
                           </Suspense>
                         </MobileSafeSection>
 
                         {/* Tech Stack section */}
-                        <MobileSafeSection id="tech-stack" fallback={<FastFallback message="Loading tech stack..." />}>
-                          <Suspense fallback={<FastFallback message="Loading tech stack..." />}>
+                        <MobileSafeSection id="tech-stack" fallback={<FastFallback />}>
+                          <Suspense fallback={<FastFallback />}>
                             <TechStack />
                           </Suspense>
                         </MobileSafeSection>
 
                         {/* Resume section */}
-                        <MobileSafeSection id="resume" fallback={<FastFallback message="Loading resume..." />}>
-                          <Suspense fallback={<FastFallback message="Loading resume..." />}>
+                        <MobileSafeSection id="resume" fallback={<FastFallback />}>
+                          <Suspense fallback={<FastFallback />}>
                             <Resume />
                           </Suspense>
                         </MobileSafeSection>
 
                         {/* Contact section */}
-                        <MobileSafeSection id="contact" fallback={<FastFallback message="Loading contact..." />}>
-                          <Suspense fallback={<FastFallback message="Loading contact..." />}>
+                        <MobileSafeSection id="contact" fallback={<FastFallback />}>
+                          <Suspense fallback={<FastFallback />}>
                             <Contact />
                           </Suspense>
                         </MobileSafeSection>

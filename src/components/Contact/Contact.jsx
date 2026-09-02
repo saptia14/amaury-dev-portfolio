@@ -14,10 +14,15 @@ import {
   FaExternalLinkAlt,
   FaSpinner
 } from "react-icons/fa";
-import SEOHead from '../SEO/SEOHead'
-import { SEO_CONFIGS } from '../SEO/seoConfigs'
 
-const WEB3FORMS_ACCESS_KEY = "60247f01-27d4-49b1-91b1-652fa2b847c3";
+// La access key de Web3Forms esta pensada para ser publica (el producto es un
+// relay de formularios sin backend) y Vite inlinea las VITE_* en el bundle: la
+// exposicion es la misma en ambos casos. Se lee de entorno para poder rotarla
+// desde Vercel sin abrir un PR. El literal queda de respaldo porque
+// .env.production esta en .gitignore y Vercel nunca lo ve: sin el, el
+// formulario se romperia en silencio y sin error de build.
+const WEB3FORMS_ACCESS_KEY =
+  import.meta.env.VITE_WEB3FORMS_KEY || "60247f01-27d4-49b1-91b1-652fa2b847c3";
 
 function Contact() {
   const { t } = useTranslation();
@@ -62,8 +67,10 @@ function Contact() {
           name: formData.name,
           email: formData.email,
           message: formData.message,
-          subject: `Portfolio Contact: Message from ${formData.name}`,
-          from_name: "Amaury Portfolio"
+          subject: t('contact.email_subject', { name: formData.name }),
+          from_name: PERSONAL_INFO.fullName,
+          // Honeypot de Web3Forms: la proteccion real, dado que la key es publica.
+          botcheck: false
         })
       });
 
@@ -81,7 +88,7 @@ function Contact() {
     } finally {
       setIsSubmitting(false);
     }
-  }, [formData, showToast]);
+  }, [formData, showToast, t]);
 
   // Direct contact methods
   const contactMethods = [
@@ -90,6 +97,12 @@ function Contact() {
       label: t('contact.info.email_title'),
       value: PERSONAL_INFO.email,
       href: `mailto:${PERSONAL_INFO.email}`,
+    },
+    {
+      icon: FaPhone,
+      label: t('contact.info.phone_title'),
+      value: PERSONAL_INFO.phone,
+      href: `tel:${PERSONAL_INFO.phoneHref}`,
     },
     {
       icon: FaMapMarkerAlt,
@@ -106,8 +119,6 @@ function Contact() {
 
   return (
     <>
-      <SEOHead config={SEO_CONFIGS.contact} />
-
       <section className="section-padding pt-28 pb-20">
         <div className="max-w-5xl mx-auto">
 
@@ -194,7 +205,7 @@ function Contact() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-primary-500 to-primary-600 text-neutral-900 font-semibold hover:from-primary-400 hover:to-primary-500 transition-all duration-300 flex items-center justify-center gap-2 group disabled:opacity-70 disabled:cursor-not-allowed"
+                    className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold hover:from-primary-400 hover:to-primary-500 transition-all duration-300 flex items-center justify-center gap-2 group disabled:opacity-70 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? (
                       <>
@@ -237,7 +248,11 @@ function Contact() {
                         key={index}
                         href={method.href}
                         target={method.href.startsWith('http') ? '_blank' : undefined}
-                        rel={method.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                        rel={
+                          method.href.startsWith('http')
+                            ? 'noopener noreferrer'
+                            : 'nofollow'
+                        }
                         className="flex items-center gap-4 p-4 rounded-xl bg-neutral-800/40 hover:bg-neutral-800/70 border border-neutral-700/50 hover:border-primary-500/30 transition-all duration-300 group"
                       >
                         <div className="w-10 h-10 rounded-lg bg-primary-500/10 flex items-center justify-center text-primary-400 group-hover:bg-primary-500/20 transition-colors">

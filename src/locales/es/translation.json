@@ -1,11 +1,35 @@
 {
+  "common": {
+    "loading": "Cargando…",
+    "error_title": "¡Ups! Algo salió mal",
+    "error_page": "Algo salió mal. Por favor recarga la página.",
+    "error_section": "Hubo un error al cargar esta sección.",
+    "retry": "Reintentar",
+    "reload": "Recargar Página",
+    "scroll_top": "Volver arriba"
+  },
+  "seo": {
+    "title": "Emmanuel Amaury Fuentes Venegas — Tech Lead e Ingeniero Full-Stack Senior",
+    "description": "Tech Lead e Ingeniero Full-Stack Senior con más de 6 años a cargo de una plataforma multi-tenant de telecom y fintech que da servicio a ~28 marcas MVNO de marca blanca. Ruby on Rails, Kotlin Multiplatform, Ember.js y AWS.",
+    "keywords": "tech lead, ingeniero full-stack senior, desarrollador ruby on rails, kotlin multiplatform, ember.js, postgresql, arquitecto cloud aws, saas multi-tenant, integraciones de pago, méxico, querétaro",
+    "og_title": "Emmanuel Amaury Fuentes Venegas — Tech Lead e Ingeniero Full-Stack Senior",
+    "og_description": "Más de 6 años a cargo de una plataforma multi-tenant de telecom y fintech: ~28 marcas de marca blanca, 371 endpoints REST, 10 pasarelas de pago e infraestructura AWS de alta disponibilidad."
+  },
   "nav": {
     "home": "Inicio",
     "about": "Sobre Mí",
     "skills": "Habilidades",
     "projects": "Proyectos",
     "resume": "CV",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "logo_alt": "Logo del sitio",
+    "tagline": "Desarrollador",
+    "toggle_language": "Cambiar idioma",
+    "switch_language": "Switch to English",
+    "open_menu": "Abrir menú",
+    "close_menu": "Cerrar menú",
+    "menu_title": "Navegación",
+    "menu_subtitle": "portafolio"
   },
   "home": {
     "status": "Abierto a Oportunidades",
@@ -16,13 +40,11 @@
       "Arquitecto Móvil (KMP)",
       "Ingeniero Cloud AWS"
     ],
-    "description_1": "Tech Lead y Desarrollador Full Stack Senior con ",
-    "description_years": "años de experiencia",
-    "description_2": " diseñando y desarrollando aplicaciones web y móviles con ",
-    "description_3": ". Apasionado por crear arquitecturas en la nube robustas y liderar equipos tecnológicos.",
+    "description": "Tech Lead e Ingeniero Full-Stack Senior con <hl>más de {{years}} años de experiencia</hl> diseñando y desarrollando plataformas web y móviles con <hl>{{stack}}</hl>. Apasionado por las arquitecturas cloud robustas y por liderar equipos de ingeniería.",
     "btn_projects": "Ver Proyectos",
     "btn_contact": "Contáctame",
     "btn_resume": "Currículum",
+    "scroll": "Desliza",
     "terminal": {
       "whoami": "whoami",
       "role": "cat rol.txt",
@@ -32,11 +54,12 @@
       "latest_projects": "▸ últimos proyectos",
       "view_all": "Ver Todos →"
     },
-    "stats": {
-      "projects": "Proyectos",
-      "mobile_apps": "Apps Móviles",
-      "technologies": "Tecnologías",
-      "years_exp": "Años Exp"
+    "impact": {
+      "title": "Impacto en producción",
+      "brands": { "label": "Marcas de marca blanca" },
+      "endpoints": { "label": "Endpoints REST" },
+      "gateways": { "label": "Pasarelas de pago" },
+      "years": { "label": "Años de experiencia" }
     },
     "tech_title": "Tecnologías con las que trabajo"
   },
@@ -45,14 +68,12 @@
     "subtitle": "Mí",
     "greeting": "Hola, soy ",
     "role": "Tech Lead & Ingeniero Full-Stack Senior",
-    "description_1": "Soy Tech Lead e Ingeniero Full-Stack Senior con más de 6 años construyendo y siendo responsable de una plataforma multi-tenant de telecom y fintech que da servicio a ~28 marcas MVNO de marca blanca en México. Me especializo en plataformas empresariales con un fuerte enfoque en ",
-    "description_2": " para plataformas web y APIs, y ",
-    "description_3": " para soluciones móviles multiplataforma y nativas.",
-    "description_4": "Soy el contribuidor #1 de la plataforma core en Rails (2,094 de 6,649 commits) y del CRM administrativo en Ember (1,554 de 5,899). Lidero equipos de ingeniería, opero infraestructura AWS de alta disponibilidad y me hago cargo de los sistemas de extremo a extremo — del esquema y las APIs a los clientes móviles y el CI/CD que los publica.",
+    "description_1": "Soy Tech Lead e Ingeniero Full-Stack Senior con más de {{years}} años construyendo y siendo responsable de una plataforma multi-tenant de telecom y fintech que da servicio a ~{{brands}} marcas MVNO de marca blanca en México. Me especializo en plataformas empresariales con un fuerte enfoque en <hl>{{backend}}</hl> para plataformas web y APIs, y <hl>{{mobile}}</hl> para soluciones móviles multiplataforma y nativas.",
+    "description_2": "Soy el contribuidor #1 de la plataforma core en Rails (2,094 de 6,649 commits) y del CRM administrativo en Ember (1,554 de 5,899). Lidero equipos de ingeniería, opero infraestructura AWS de alta disponibilidad y me hago cargo de los sistemas de extremo a extremo — del esquema y las APIs a los clientes móviles y el CI/CD que los publica.",
     "stats": {
       "projects": "Proyectos",
       "exp": "Años Exp",
-      "dedication": "Dedicación"
+      "brands": "Marcas de marca blanca"
     },
     "highlights": {
       "dev": {
@@ -76,36 +97,81 @@
   "projects": {
     "title": "Proyectos",
     "subtitle": "Destacados",
+    "featured": "Destacado",
+    "error": "Error al cargar los proyectos",
+    "empty": "No hay proyectos en esta categoría",
+    "team_of": "Equipo de {{count}}",
+    "more_tags": "+{{count}} más",
     "filter_all": "Todos",
-    "filter_web": "Web",
     "filter_mobile": "Apps Móviles",
     "filter_backend": "Backend",
     "filter_frontend": "Frontend",
-    "filter_fullstack": "Full Stack",
     "filter_cloud": "Cloud / DevOps",
     "btn_live": "Demo en Vivo",
     "btn_code": "Código Fuente",
+    "metrics": {
+      "tables": "tablas",
+      "endpoints": "endpoints",
+      "commits": "commits",
+      "gateways": "pasarelas",
+      "ledger_reasons": "conceptos contables",
+      "fraud_rules": "reglas antifraude",
+      "operations": "operaciones",
+      "vendor_clients": "clientes de proveedores",
+      "mvne": "MVNEs",
+      "use_cases": "casos de uso",
+      "screens": "pantallas",
+      "authored": "del código",
+      "flavors": "product flavors",
+      "models": "modelos",
+      "routes": "rutas",
+      "brands": "marcas",
+      "deployments": "despliegues",
+      "availability_zones": "alta disponibilidad"
+    },
     "items": {
-      "project_1_title": "Plataforma Core MVNO Multi-Tenant",
-      "project_1_desc": "El sistema de soporte de negocio detrás de ~28 operadores móviles de marca blanca: ciclo de vida del suscriptor, aprovisionamiento de SIMs, portabilidad numérica, facturación y pagos. 108 tablas, 371 endpoints REST y un modelo multi-tenant en árbol con credenciales de operador cifradas por tenant. Mayor contribuidor: 2,094 de 6,649 commits.",
-      "project_2_title": "Plataforma de Pagos Multi-Gateway Unificada",
-      "project_2_desc": "Diez procesadores de pago más referencias de efectivo OXXO consolidados detrás de un único protocolo de cobro, con persistencia de errores por pasarela y manejo de webhooks. Incluye un libro contable de saldos con 26 conceptos y bloqueo pesimista, un limitador antifraude configurable y facturación electrónica CFDI/SAT.",
-      "project_3_title": "Aprovisionamiento e Integraciones con Operadores",
-      "project_3_desc": "La capa de integración que conecta la plataforma con la red móvil de México: aprovisionamiento con Altán Redes (~40 operaciones — activación, suspensión, bloqueo de IMEI, perfiles HSS), un segundo MVNE (OXIO), ingesta batch de reportes CDR y de movilidad vía SFTP, la portabilidad numérica y facturación electrónica CFDI/SAT — 18 clientes de proveedores estandarizados en un solo contrato.",
-      "project_4_title": "App de Consumidor en Kotlin Multiplatform",
-      "project_4_desc": "Lideré la migración del ecosistema móvil de consumidor a Kotlin Multiplatform: una sola base de código compartida (336 archivos) para Android e iOS con Clean Architecture — 54 casos de uso, 43 pantallas, 30 ViewModels, interoperabilidad con Swift y theming dinámico para 6 marcas. Autor del 63% del código.",
-      "project_5_title": "App Android POS para Distribuidores",
-      "project_5_desc": "Aplicación de punto de venta para la red de distribuidores: activación de SIMs, alta de clientes, portabilidad numérica, verificación de IMEI y compra de saldos. 17 product flavors desde una sola base de código, seis procesadores de pago integrados de forma nativa y escaneo de códigos con ZXing. Principal contribuidor: 232 de 559 commits.",
-      "project_6_title": "CRM Administrativo de Telecom",
-      "project_6_desc": "El CRM de operaciones internas: 118 modelos, 337 rutas y 187 componentes con clases base CRUD compartidas, un sistema de permisos por bitmask y dashboards con exportación de gráficas y PDF. Desplegado por tenant vía GitLab CI a S3 + CloudFront. Principal contribuidor: 1,554 de 5,899 commits a lo largo de 6.5 años.",
-      "project_7_title": "Infraestructura Cloud AWS Multi-Cliente",
-      "project_7_desc": "Diseñé y operé la infraestructura AWS de ~28 marcas de marca blanca — más de 100 despliegues entre CRMs administrativos, dashboards, portales públicos de recarga y APIs. Alta disponibilidad Multi-AZ: EC2 con Auto Scaling detrás de ELB, RDS Multi-AZ (PostgreSQL), S3 + CloudFront, failover con Route 53, aislamiento con VPC y monitoreo con CloudWatch."
+      "mvno_core": {
+        "title": "Plataforma Core MVNO Multi-Tenant",
+        "role": "Tech Lead / Ingeniero Backend Principal",
+        "desc": "El sistema de soporte de negocio detrás de ~28 operadores móviles de marca blanca: ciclo de vida del suscriptor, aprovisionamiento de SIMs, portabilidad numérica, facturación y pagos. 108 tablas, 371 endpoints REST y un modelo multi-tenant en árbol con credenciales de operador cifradas por tenant. Mayor contribuidor: 2,094 de 6,649 commits."
+      },
+      "payments": {
+        "title": "Plataforma de Pagos Multi-Gateway Unificada",
+        "role": "Ingeniero Principal",
+        "desc": "Diez procesadores de pago más referencias de efectivo OXXO consolidados detrás de un único protocolo de cobro, con persistencia de errores por pasarela y manejo de webhooks. Incluye un libro contable de saldos con 26 conceptos y bloqueo pesimista, un limitador antifraude configurable y facturación electrónica CFDI/SAT."
+      },
+      "carrier_integrations": {
+        "title": "Aprovisionamiento e Integraciones con Operadores",
+        "role": "Ingeniero Backend Principal",
+        "desc": "La capa de integración que conecta la plataforma con la red móvil de México: aprovisionamiento con Altán Redes (~40 operaciones — activación, suspensión, bloqueo de IMEI, perfiles HSS), un segundo MVNE (OXIO), ingesta batch de reportes CDR y de movilidad vía SFTP, la portabilidad numérica y facturación electrónica CFDI/SAT — 18 clientes de proveedores estandarizados en un solo contrato."
+      },
+      "kmp_app": {
+        "title": "App de Consumidor en Kotlin Multiplatform",
+        "role": "Arquitecto Móvil / Ingeniero Principal",
+        "desc": "Lideré la migración del ecosistema móvil de consumidor a Kotlin Multiplatform: una sola base de código compartida (336 archivos) para Android e iOS con Clean Architecture — 54 casos de uso, 43 pantallas, 30 ViewModels, interoperabilidad con Swift y theming dinámico para 6 marcas. Autor del 63% del código."
+      },
+      "pos_android": {
+        "title": "App Android POS para Distribuidores",
+        "role": "Ingeniero Android Principal",
+        "desc": "Aplicación de punto de venta para la red de distribuidores: activación de SIMs, alta de clientes, portabilidad numérica, verificación de IMEI y compra de saldos. 17 product flavors desde una sola base de código, seis procesadores de pago integrados de forma nativa y escaneo de códigos con ZXing. Principal contribuidor: 232 de 559 commits."
+      },
+      "admin_crm": {
+        "title": "CRM Administrativo de Telecom",
+        "role": "Ingeniero Frontend Principal",
+        "desc": "El CRM de operaciones internas: 118 modelos, 337 rutas y 187 componentes con clases base CRUD compartidas, un sistema de permisos por bitmask y dashboards con exportación de gráficas y PDF. Desplegado por tenant vía GitLab CI a S3 + CloudFront. Principal contribuidor: 1,554 de 5,899 commits a lo largo de 6.5 años."
+      },
+      "aws_infra": {
+        "title": "Infraestructura Cloud AWS Multi-Cliente",
+        "role": "Ingeniero Cloud / DevOps",
+        "desc": "Diseñé y operé la infraestructura AWS de ~28 marcas de marca blanca — más de 100 despliegues entre CRMs administrativos, dashboards, portales públicos de recarga y APIs. Alta disponibilidad Multi-AZ: EC2 con Auto Scaling detrás de ELB, RDS Multi-AZ (PostgreSQL), S3 + CloudFront, failover con Route 53, aislamiento con VPC y monitoreo con CloudWatch."
+      }
     }
   },
   "contact": {
     "title": "Ponte en",
     "subtitle": "Contacto",
     "description": "Actualmente estoy abierto a nuevas oportunidades. Ya sea que tengas una pregunta o solo quieras saludar, ¡haré lo posible por responderte!",
+    "email_subject": "Contacto desde el portafolio: mensaje de {{name}}",
     "form": {
       "name": "Tu Nombre",
       "email": "Tu Correo",
@@ -117,6 +183,7 @@
     "info": {
       "location_title": "Ubicación",
       "email_title": "Correo Electrónico",
+      "phone_title": "Teléfono",
       "social_title": "Redes Sociales"
     },
     "messages": {
@@ -135,62 +202,77 @@
     "download": "Descargar PDF",
     "page": "Página",
     "of": "de",
-    "experiences": [
-      {
+    "location_remote": "Remoto",
+    "expand_all": "Expandir todo",
+    "collapse_all": "Colapsar todo",
+    "experiences": {
+      "koonol_tech_lead": {
         "title": "Tech Lead / Ingeniero Full-Stack Senior",
-        "company": "Koonol México",
-        "period": "Abril 2021 - Abril 2026",
-        "location": "Zapopan, Jal. (Remoto)",
-        "achievements": [
-          "Propiedad de la Plataforma: Fui responsable de la plataforma core MVNO multi-tenant en Ruby on Rails (108 tablas, 371 endpoints REST, ~95K líneas de código) que impulsa ~28 marcas de telecom de marca blanca — mayor contribuidor con 2,094 de 6,649 commits. Diseñé la multi-tenencia como un árbol de tenants con credenciales de operador cifradas por tenant.",
-          "Sistemas de Pago: Unifiqué 10 pasarelas de pago (Openpay, Stripe, Conekta/FEMSA, MercadoPago, Kushki, Clip, Toku, DPCard, DPVale, Beel) más referencias de efectivo OXXO detrás de un único protocolo de cobro con captura de errores por pasarela.",
-          "Integraciones con Operadores: Construí la integración de aprovisionamiento con Altán Redes (~40 operaciones), ingesta batch de reportes CDR vía SFTP, un segundo MVNE (OXIO), portabilidad numérica y facturación electrónica CFDI/SAT — 18 clientes de proveedores estandarizados en un solo contrato.",
-          "Confiabilidad y Correctitud: Diseñé un libro contable de saldos con 26 conceptos y bloqueo pesimista, un limitador antifraude con seis reglas configurables, reintentos con backoff exponencial y colas de trabajos con concurrencia limitada (95 jobs / 18 colas) ajustadas a los límites de las APIs de los operadores.",
-          "Infraestructura Cloud AWS: Diseñé y operé infraestructura AWS Multi-AZ de alta disponibilidad para ~28 marcas y más de 100 despliegues — EC2 con Auto Scaling detrás de ELB, RDS Multi-AZ (PostgreSQL), S3 + CloudFront, Route 53 con failover, aislamiento con VPC y monitoreo con CloudWatch.",
-          "Liderazgo Móvil: Lideré la migración a Kotlin Multiplatform, siendo autor del 63% del código — Clean Architecture + MVVM con 54 casos de uso y 43 pantallas compartidas entre Android e iOS; releases de marca blanca automatizados con fastlane y secretos inyectados desde Vault.",
-          "Estándares y Mentoría: Establecí GitLab CI con RSpec (432 pruebas), RuboCop, SAST con Brakeman/Snyk, una especificación OpenAPI de 8,423 líneas y trazabilidad con OpenTelemetry a lo largo de 146 releases; mentoré ingenieros y lideré decisiones de arquitectura en backend, móvil y frontend."
-        ]
+        "period": "Abril 2021 – Abril 2026",
+        "bullets": {
+          "platform": {
+            "label": "Propiedad de la Plataforma",
+            "text": "Fui responsable de la plataforma core MVNO multi-tenant en Ruby on Rails (108 tablas, 203 modelos, 371 endpoints REST, ~95K líneas de código en producción / ~151K en pruebas) que impulsa ~28 marcas de telecom de marca blanca — mayor contribuidor con 2,094 de 6,649 commits. Diseñé la multi-tenencia como un árbol de tenants con credenciales de operador cifradas por tenant y configuración de tema en cascada."
+          },
+          "payments": {
+            "label": "Sistemas de Pago",
+            "text": "Unifiqué 10 pasarelas de pago (Openpay, Stripe, Conekta/Digital FEMSA, MercadoPago, Kushki, Clip, Toku, DPCard, DPVale, Beel) más referencias de efectivo OXXO detrás de un único protocolo de cobro con captura de errores por pasarela, dejando cada nuevo procesador como un cambio acotado."
+          },
+          "carriers": {
+            "label": "Integraciones con Operadores",
+            "text": "Construí la integración de aprovisionamiento con Altán Redes (~40 operaciones: activación, suspensión, bloqueo de IMEI, portabilidad numérica, perfiles HSS de suscriptor), ingesta batch de reportes CDR/movilidad/NIR vía SFTP, un segundo MVNE (OXIO), la ventanilla de portabilidad numérica de México y facturación electrónica CFDI/SAT — 18 clientes de proveedores estandarizados en un solo contrato."
+          },
+          "reliability": {
+            "label": "Confiabilidad y Correctitud",
+            "text": "Diseñé un libro contable de saldos con 26 conceptos y bloqueo pesimista de filas, un limitador antifraude con seis reglas configurables, una biblioteca de reintentos con backoff exponencial y reenvío acotado de webhooks, y colas de trabajos con concurrencia limitada (95 jobs / 18 colas / 24 programaciones) ajustadas a los límites de las APIs de los operadores."
+          },
+          "aws": {
+            "label": "Infraestructura Cloud AWS",
+            "text": "Diseñé y operé infraestructura AWS Multi-AZ de alta disponibilidad para ~28 marcas de marca blanca y más de 100 despliegues — EC2 con Auto Scaling detrás de Elastic Load Balancing, RDS Multi-AZ (PostgreSQL), hosting estático en S3 servido por CloudFront, DNS con Route 53 y failover por health-check, TLS gestionado con ACM, aislamiento con VPC y monitoreo con CloudWatch."
+          },
+          "mobile": {
+            "label": "Liderazgo Móvil",
+            "text": "Lideré la migración a Kotlin Multiplatform, siendo autor del 63% del código (242 de 386 commits) — Clean Architecture + MVVM con 54 casos de uso, 43 pantallas y 30 ViewModels compartidos entre Android e iOS, interoperabilidad Kotlin/Native↔Swift y theming en tiempo de ejecución. Automaticé releases de marca blanca con fastlane hacia Play Store y TestFlight, con secretos por marca inyectados desde HashiCorp Vault en tiempo de build."
+          },
+          "standards": {
+            "label": "Estándares y Mentoría",
+            "text": "Establecí GitLab CI con RSpec (432 pruebas), RuboCop, SAST con Brakeman/Snyk, 42Crunch, una especificación OpenAPI de 8,423 líneas y trazabilidad con OpenTelemetry a lo largo de 146 releases. Mentoré ingenieros mediante code review, capacitación y onboarding; lideré decisiones de arquitectura en backend, móvil y frontend."
+          }
+        }
       },
-      {
+      "gurucomm_dev": {
         "title": "Desarrollador de Software",
-        "company": "Gurúcomm",
-        "period": "Enero 2020 - Abril 2021",
-        "location": "Querétaro, Qro.",
-        "achievements": [
-          "Crecí hasta ser contribuidor clave de la API en Ruby on Rails y el CRM en Ember.js que se convirtieron en la plataforma insignia de telecom de la empresa, tomando responsabilidad del ciclo de vida del suscriptor, facturación y funcionalidades de la red de distribuidores.",
-          "Construí y mantuve la aplicación Android de ventas para distribuidores en Kotlin (MVVM, Room), que llegó a publicarse en 17 marcas de marca blanca."
-        ]
+        "period": "Enero 2020 – Abril 2021",
+        "bullets": {
+          "platform": {
+            "label": "Contribuidor Clave",
+            "text": "Crecí hasta ser contribuidor clave de la API en Ruby on Rails y el CRM en Ember.js que se convirtieron en la plataforma insignia de telecom de la empresa, tomando responsabilidad del ciclo de vida del suscriptor, facturación y funcionalidades de la red de distribuidores."
+          },
+          "mobile": {
+            "label": "App Android de Ventas",
+            "text": "Construí y mantuve la aplicación Android de ventas para distribuidores en Kotlin (MVVM, Room), que llegó a publicarse en 17 marcas de marca blanca."
+          }
+        }
       },
-      {
-        "title": "Trainee Developer",
-        "company": "Gurúcomm",
-        "period": "Octubre 2019 - Diciembre 2019",
-        "location": "Querétaro, Qro.",
-        "achievements": [
-          "Me uní al equipo que construía plataformas corporativas de telecom con Ruby on Rails y Ember.js; entregué mis primeras contribuciones en producción al portal de autoservicio para clientes."
-        ]
-      },
-      {
-        "title": "Freelance Developer",
-        "company": "Independiente",
-        "period": "2018",
-        "location": "Remoto",
-        "achievements": [
-          "Desarrollo de scripts en C# y diseño de lógicas de juego utilizando el motor Unity.",
-          "Redacción de historias (Story Writer) y estructuración de narrativas para proyectos interactivos."
-        ]
+      "gurucomm_trainee": {
+        "title": "Desarrollador en Prácticas",
+        "period": "Octubre 2019 – Diciembre 2019",
+        "bullets": {
+          "onboarding": {
+            "label": "Primeras Contribuciones en Producción",
+            "text": "Me uní al equipo que construía plataformas corporativas de telecom con Ruby on Rails y Ember.js; entregué mis primeras contribuciones en producción al portal de autoservicio para clientes."
+          }
+        }
       }
-    ],
-    "education": [
-      {
+    },
+    "education": {
+      "itq": {
         "degree": "Licenciatura en Sistemas Computacionales",
-        "institution": "Instituto Tecnológico de Querétaro (ITQ)",
-        "period": "Agosto 2016 - Enero 2022",
-        "location": "Querétaro, Qro.",
-        "gpa": "Concluida",
+        "period": "Agosto 2016 – Enero 2022",
+        "status": "Concluida",
         "details": "Ingeniero en Sistemas Computacionales con fundamentos sólidos en diseño de algoritmos, estructuras de datos y metodologías de desarrollo de software."
       }
-    ],
+    },
     "educationTitle": "Educación",
     "academicBackground": "Formación Académica",
     "status": "Estatus",
@@ -205,10 +287,23 @@
     "exp_badge": "Experiencia Laboral",
     "exp_title": "Trayectoria Profesional"
   },
+  "languages": {
+    "badge": "Idiomas",
+    "title": "Idiomas en los que Trabajo",
+    "items": {
+      "es": { "name": "Español", "fluency": "Nativo" },
+      "en": { "name": "Inglés", "fluency": "Profesional" }
+    }
+  },
   "techStack": {
     "title": "Stack Tecnológico",
     "subtitle_1": "Tecnologías",
     "subtitle_2": "& Herramientas",
+    "levels": {
+      "expert": "Experto",
+      "good": "Bueno"
+    },
+    "plus_gateways": "+{{count}} pasarelas",
     "categories": {
       "backend": "Backend y APIs",
       "mobile": "Móvil",

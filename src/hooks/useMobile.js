@@ -63,3 +63,21 @@ export const useMobileResize = (callback, delay = 250) => {
     };
   }, [callback, delay]);
 };
+
+// Viewport móvil (<768px). Convención compartida con el hero, que desactiva
+// las animaciones de entrada bajo ese ancho.
+export const useIsMobile = (breakpoint = 768) => {
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== 'undefined' && window.innerWidth < breakpoint
+  );
+
+  useEffect(() => {
+    const query = window.matchMedia(`(max-width: ${breakpoint - 1}px)`);
+    const update = () => setIsMobile(query.matches);
+    update();
+    query.addEventListener('change', update);
+    return () => query.removeEventListener('change', update);
+  }, [breakpoint]);
+
+  return isMobile;
+};

@@ -1,7 +1,10 @@
-import { useEffect, useRef, useState, useMemo } from "react";
+import { useEffect, useRef, useState } from "react";
 import TypeWriter from "./TypeWriter";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import { PERSONAL_INFO } from "../../data/constants";
+import { FOCUS_STACK, PRIMARY_STACK, STATS } from "../../data/resume";
+import { MARQUEE_TECHS } from "../../data/skills";
+import ImpactBand from "./ImpactBand";
 import {
   FaArrowRight,
   FaGithub,
@@ -11,7 +14,6 @@ import {
 } from "react-icons/fa";
 import {
   SiRubyonrails,
-  SiReact,
   SiKotlin,
   SiSwift,
   SiPostgresql,
@@ -42,46 +44,30 @@ function GradientOrb({ className, style }) {
   );
 }
 
-/* ─── Stat counter card ─── */
-function StatCard({ value, label, suffix = "+" }) {
-  return (
-    <div className="flex flex-col items-center gap-1 px-5 py-3">
-      <span className="text-2xl md:text-3xl font-black text-primary-400 tabular-nums">
-        {value}
-        <span className="text-primary-500/70">{suffix}</span>
-      </span>
-      <span className="text-[11px] md:text-xs uppercase tracking-widest text-neutral-500 font-medium">
-        {label}
-      </span>
-    </div>
-  );
-}
-
 /* ─── Marquee tech ticker ─── */
-function TechMarquee() {
-  const techs = [
-    { icon: SiRubyonrails, name: "Ruby on Rails", color: "text-red-500" },
-    { icon: SiPostgresql, name: "PostgreSQL", color: "text-sky-400" },
-    { icon: SiKotlin, name: "Kotlin", color: "text-purple-500" },
-    { icon: SiSwift, name: "Swift", color: "text-orange-500" },
-    { icon: SiEmberdotjs, name: "Ember.js", color: "text-red-400" },
-    { icon: SiReact, name: "React", color: "text-cyan-400" },
-    { icon: FaAws, name: "AWS", color: "text-primary-500" },
-    { icon: SiDocker, name: "Docker", color: "text-blue-400" },
-  ];
+const MARQUEE_ICONS = {
+  rails: SiRubyonrails,
+  postgres: SiPostgresql,
+  kotlin: SiKotlin,
+  swift: SiSwift,
+  ember: SiEmberdotjs,
+  aws: FaAws,
+  docker: SiDocker,
+};
 
+function TechMarquee() {
   // Duplicate for seamless loop
-  const items = [...techs, ...techs];
+  const items = [...MARQUEE_TECHS, ...MARQUEE_TECHS];
 
   return (
     <div className="relative w-full overflow-hidden py-4">
       {/* Fade edges */}
-      <div className="absolute left-0 top-0 bottom-0 w-16 z-10 bg-gradient-to-r from-[rgb(5,5,8)] to-transparent pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-16 z-10 bg-gradient-to-l from-[rgb(5,5,8)] to-transparent pointer-events-none" />
+      <div className="absolute left-0 top-0 bottom-0 w-16 z-10 bg-gradient-to-r from-[rgb(var(--background-end-rgb))] to-transparent pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-16 z-10 bg-gradient-to-l from-[rgb(var(--background-end-rgb))] to-transparent pointer-events-none" />
 
       <div className="flex gap-6 animate-marquee whitespace-nowrap">
         {items.map((tech, i) => {
-          const Icon = tech.icon;
+          const Icon = MARQUEE_ICONS[tech.iconKey];
           return (
             <div
               key={i}
@@ -226,11 +212,11 @@ function Home() {
 
             {/* Description */}
             <p className="hero-element text-neutral-400 text-base md:text-lg leading-relaxed max-w-xl">
-              {t('home.description_1')}
-              <span className="text-primary-400 font-semibold">6 {t('home.description_years', 'years')}</span>
-              {t('home.description_2')}
-              <span className="text-primary-400 font-semibold">Ruby on Rails, Kotlin & Swift</span>
-              {t('home.description_3')}
+              <Trans
+                i18nKey="home.description"
+                values={{ years: STATS.yearsExperience, stack: PRIMARY_STACK }}
+                components={{ hl: <span className="text-primary-400 font-semibold" /> }}
+              />
             </p>
 
             {/* CTA row */}
@@ -317,7 +303,7 @@ function Home() {
                     <span className="text-primary-500">$</span>{" "}
                     <span className="text-neutral-400">{t('home.terminal.focus')}</span>
                     <p className="text-primary-300 mt-1 pl-4">
-                      Ruby on Rails · KMP · AWS
+                      {FOCUS_STACK.join(' · ')}
                     </p>
                   </div>
                   <div>
@@ -350,14 +336,9 @@ function Home() {
           </div>
         </div>
 
-        {/* ══════════ STATS BAR ══════════ */}
+        {/* ══════════ IMPACT BAND ══════════ */}
         <div className="hero-element">
-          <div className="flex flex-wrap justify-center gap-2 md:gap-0 md:divide-x divide-neutral-800 bg-neutral-900/50 border border-neutral-800/60 rounded-2xl backdrop-blur-sm py-2">
-            <StatCard value="7" label={t('home.stats.projects')} />
-            <StatCard value="17" label={t('home.stats.mobile_apps')} />
-            <StatCard value="20" label={t('home.stats.technologies')} />
-            <StatCard value="6" label={t('home.stats.years_exp')} />
-          </div>
+          <ImpactBand />
         </div>
 
         {/* ══════════ TECH MARQUEE ══════════ */}
@@ -372,7 +353,7 @@ function Home() {
         {!isMobile && (
           <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-neutral-600">
             <span className="text-[10px] uppercase tracking-[0.25em] font-medium">
-              Scroll
+              {t('home.scroll')}
             </span>
             <div className="w-5 h-8 border-2 border-neutral-700 rounded-full flex justify-center pt-1.5">
               <div className="w-1 h-2 bg-primary-500 rounded-full animate-bounce" />

@@ -51,10 +51,37 @@ Este repositorio contiene el código fuente de mi **portafolio personal**, const
 ## 🛠️ Tecnologías Principales del Portafolio
 
 - **React 19** & **Vite 6**
-- **TailwindCSS 4.1**
-- **Framer Motion** & **GSAP**
+- **TailwindCSS 4.1** (CSS-first: los tokens viven en `src/index.css`, no hay `tailwind.config.js`)
+- **Framer Motion** (+ GSAP, solo para el stagger del hero)
 - **i18next** & **react-i18next** (Soporte Multilenguaje)
-- **Zustand** (Manejo de Estado)
+- **Inter Variable** self-hosted vía `@fontsource-variable/inter`
+
+---
+
+## 🗂️ Dónde vive el contenido
+
+La regla: *si traducirlo sería incorrecto, es **dato**; si dejarlo en inglés sería incorrecto, es **copy**.*
+
+| Qué | Dónde |
+|---|---|
+| Copy visible (ambos idiomas, siempre en paridad) | `src/locales/{en,es}/translation.json` |
+| Experiencia, educación, idiomas, métricas del CV | `src/data/resume.js` |
+| Matriz de habilidades, marquee, showcase | `src/data/skills.js` |
+| Proyectos (imagen, tags, periodo, métricas) | `src/data/projects.json` |
+| Identidad y contacto | `src/data/constants.js` |
+| Datos estructurados (JSON-LD) | `src/data/jsonld.js` |
+
+`npm run build` ejecuta antes `npm run i18n:check`, que **falla el build** si las claves de inglés y español se separan o si un id referenciado desde `src/data/` no resuelve en ambos idiomas.
+
+---
+
+## 🔑 Variables de entorno
+
+| Variable | Para qué |
+|---|---|
+| `VITE_WEB3FORMS_KEY` | Access key del formulario de contacto. Es pública por diseño (Vite la inlinea en el bundle); se externaliza solo para poder rotarla desde Vercel sin abrir un PR. |
+
+Copia `.env.example` a `.env.production` en local, y define la variable en Vercel → Settings → Environment Variables (Production + Preview).
 
 ---
 
